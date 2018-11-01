@@ -4,6 +4,13 @@
     <title><![CDATA[第一篇文章 localStorage 存储]]></title>
     <url>%2Faitao%2F2018%2F11%2F01%2F%E5%AD%98%E5%82%A8%2F</url>
     <content type="text"><![CDATA[多项表单 localStorage 存储适用于多项输入如：radio 、text 、 number12345678910111213141516171819202122232425262728293031323334$(function()&#123; //页面初始加载判断缓存 var lenth = localStorage.length; if(lenth !='' &amp;&amp; lenth !=undefined &amp;&amp; lenth != null) &#123; for(var i= lenth - 1 ; i &gt;0; i--)&#123; var key = localStorage.key(i);//缓存的key var val = localStorage.getItem(key);//缓存的值 var name = key.substring(0,key.length -2);//获得缓存位置的名称 var distinguish = key.substring(key.length -2,key.length); //取的识别字符 if(distinguish === '4a')&#123; $("input[type='radio']").each(function () &#123; if($(this)[0].name === name &amp;&amp; $(this)[0].value === val)&#123; $(this).attr('checked', true); &#125; &#125;); $("input[type='text']").each(function () &#123; if($(this)[0].name === name )&#123; $(this).val(val) &#125; &#125;); &#125; &#125; &#125; &#125;) //监听内容变化 $("input[type='text']").bind("input propertychange",function (event) &#123; localStorage.setItem(event.target.name+'4a', event.target.value); &#125;); $("input[type='radio']").on('input', function(event) &#123; localStorage.setItem(event.target.name+'4a', event.target.value); //设置缓存 名字+识别字符 &#125;);]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Html</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>

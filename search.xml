@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PHP 常用字符串的比较]]></title>
+    <url>%2Faitao%2F2018%2F11%2F01%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[PHP 是 “PHP Hypertext Preprocessor” 的首字母缩略词PHP 是一种被广泛使用的开源脚本语言PHP 脚本在服务器上执行PHP 没有成本，可供免费下载和使用 PHP 相关主流框架：thinkphp5.0 看云文档 laravel 中文社区 Phalcon Symfony 排列不分先后。 本文对框架不做讨论 常用字符串函数及使用字符串大小写转换12345$str = 'abc';$low_str = strtolower($str);echo '转换为小写'+$low_str;$uper_str = strtoupper($str);echo '转换为大写'+$uper_str; 替换字符串中的字串mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixed $length ] )substr_replace()在字符串 string 的副本中将由 start 和可选的 length 参数限定的子字符串使用 replacement 进行替换。注： 如果 start 为正数，替换将从 string 的 start 位置开始。 如果 start 为负数，替换将从 string 的倒数第 start 个位置开始。 1234实列：$str = 'abc';$new_str = substr_replace($str,'d',0,$strlen($str));//strlen() 函数计算字符串的长度echo '新的字串的值'+$new_str;//abcd More info: php 文档 字符串与数组之间的相互转化array explode ( string $delimiter , string $string [, int $limit ] )此函数返回由字符串组成的数组，每个元素都是 string 的一个子串，它们被字符串 delimiter 作为边界点分割出来。string implode ( string $glue , array $pieces ) //$glue 默认为空字符串string implode ( array $pieces )implode() 可以接收两种参数顺序，但是 explode() 不行。 12345678910111213实例：$str = 'a,b,c,d';//逗号为分隔字符 相当于 $delimiter ='';$arr = explode(',',$str);dump($arr);得到：array(4) &#123; [0] =&gt; string(1) "a" [1] =&gt; string(1) "b" [2] =&gt; string(1) "c" [3] =&gt; string(1) "d"&#125;$new_str = implode($arr);echo $new_str;//abcd More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第一篇文章 localStorage 存储]]></title>
     <url>%2Faitao%2F2018%2F11%2F01%2F%E5%AD%98%E5%82%A8%2F</url>
     <content type="text"><![CDATA[多项表单 localStorage 存储适用于多项输入如：radio 、text 、 number12345678910111213141516171819202122232425262728293031323334$(function()&#123; //页面初始加载判断缓存 var lenth = localStorage.length; if(lenth !='' &amp;&amp; lenth !=undefined &amp;&amp; lenth != null) &#123; for(var i= lenth - 1 ; i &gt;0; i--)&#123; var key = localStorage.key(i);//缓存的key var val = localStorage.getItem(key);//缓存的值 var name = key.substring(0,key.length -2);//获得缓存位置的名称 var distinguish = key.substring(key.length -2,key.length); //取的识别字符 if(distinguish === '4a')&#123; $("input[type='radio']").each(function () &#123; if($(this)[0].name === name &amp;&amp; $(this)[0].value === val)&#123; $(this).attr('checked', true); &#125; &#125;); $("input[type='text']").each(function () &#123; if($(this)[0].name === name )&#123; $(this).val(val) &#125; &#125;); &#125; &#125; &#125; &#125;) //监听内容变化 $("input[type='text']").bind("input propertychange",function (event) &#123; localStorage.setItem(event.target.name+'4a', event.target.value); &#125;); $("input[type='radio']").on('input', function(event) &#123; localStorage.setItem(event.target.name+'4a', event.target.value); //设置缓存 名字+识别字符 &#125;);]]></content>
@@ -11,10 +22,5 @@
         <tag>JavaScript</tag>
         <tag>Html</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Faitao%2F2018%2F10%2F31%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>

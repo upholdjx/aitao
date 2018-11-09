@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JavaScript,React,">
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="集技术与帅气于一身的男孩">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iaitao">
-<meta property="og:url" content="https://upholdjx.github.io/aitao/tags/React/index.html">
+<meta name="description" content="全局安装脚手架工具1npm install -g create-react-app 创建项目1234create-react-app react-cli下载完成后  cd react-cli  npm start 回调函数当点击按钮时发生的点击事件12345678第一种方案可以通过构造方法的bind(this) 绑定 thisconstruct(props) &amp;#123;	super(props)">
+<meta name="keywords" content="JavaScript,React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React脚手架项目搭建">
+<meta property="og:url" content="https://upholdjx.github.io/aitao/2018/11/06/React脚手架项目搭建/index.html">
 <meta property="og:site_name" content="iaitao">
-<meta property="og:description" content="集技术与帅气于一身的男孩">
+<meta property="og:description" content="全局安装脚手架工具1npm install -g create-react-app 创建项目1234create-react-app react-cli下载完成后  cd react-cli  npm start 回调函数当点击按钮时发生的点击事件12345678第一种方案可以通过构造方法的bind(this) 绑定 thisconstruct(props) &amp;#123;	super(props)">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-07T13:54:20.386Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iaitao">
-<meta name="twitter:description" content="集技术与帅气于一身的男孩">
+<meta name="twitter:title" content="React脚手架项目搭建">
+<meta name="twitter:description" content="全局安装脚手架工具1npm install -g create-react-app 创建项目1234create-react-app react-cli下载完成后  cd react-cli  npm start 回调函数当点击按钮时发生的点击事件12345678第一种方案可以通过构造方法的bind(this) 绑定 thisconstruct(props) &amp;#123;	super(props)">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://upholdjx.github.io/aitao/tags/React/">
+  <link rel="canonical" href="https://upholdjx.github.io/aitao/2018/11/06/React脚手架项目搭建/">
 
 
 
 
 
-  <title>标签: React | iaitao</title>
+  <title>React脚手架项目搭建 | iaitao</title>
   
 
 
@@ -145,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <!-- <a href="https://github.com/upholdjx" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a> -->
 
@@ -282,78 +284,208 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>React<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/06/React脚手架项目搭建/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/aitao/2018/11/06/React脚手架项目搭建/" itemprop="url">
-              
-                <span itemprop="name">React脚手架项目搭建</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">React脚手架项目搭建</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-06T10:14:08+08:00" content="2018-11-06">
-          11-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-06T10:14:08+08:00">
+                2018-11-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/前端框架/" itemprop="url" rel="index">
+                    <span itemprop="name">前端框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/aitao/2018/11/05/React初体验/" itemprop="url">
-              
-                <span itemprop="name">React初体验</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-05T09:16:27+08:00" content="2018-11-05">
-          11-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h2 id="全局安装脚手架工具"><a href="#全局安装脚手架工具" class="headerlink" title="全局安装脚手架工具"></a>全局安装脚手架工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create-react-app react-cli</span><br><span class="line">下载完成后</span><br><span class="line">  cd react-cli</span><br><span class="line">  npm start</span><br></pre></td></tr></table></figure>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>当点击按钮时发生的点击事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">第一种方案可以通过构造方法的bind(this) 绑定 this</span><br><span class="line">construct(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.increateLikes = this.increateLikes.bind(this);</span><br><span class="line">&#125;</span><br><span class="line">&lt;button onClick=&#123;this.increateLikes&#125; &quot;&gt;点赞&lt;/button&gt;</span><br><span class="line">第二种的方案是直接用es6 的方法写</span><br><span class="line">&lt;button onClick=&#123;() =&gt;&#123;this.increateLikes()&#125;&#125;&gt;点赞&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="更新组件"><a href="#更新组件" class="headerlink" title="更新组件"></a>更新组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">increateLikes() &#123;</span><br><span class="line">  this.setState(&#123;</span><br><span class="line">  	likes: this.state.likes</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>时钟更新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line"></span><br><span class="line">class DigitalClock extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      date: new Date()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">   this.timer = setInterval(()=&gt; &#123;</span><br><span class="line">     this.setState(&#123;</span><br><span class="line">       date:new Date</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;,1000)</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    clearInterval(this.timer)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div className=&quot;digital-clock-component jumbotron&quot;&gt;</span><br><span class="line">        &lt;h1&gt;&#123;this.state.date.toLocaleTimeString()&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default DigitalClock</span><br></pre></td></tr></table></figure></p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">阻止默认事件</span><br><span class="line">event.preventDefault()</span><br><span class="line"></span><br><span class="line">//非受控组件</span><br><span class="line">handSubmit(event) &#123;</span><br><span class="line">    alert(this.textInput.value)</span><br><span class="line">    event.preventDefault() //阻止默认事件</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&lt;input type=&quot;text&quot; className=&quot;form-control&quot; </span><br><span class="line">        ref=&#123;(textInput) =&gt;&#123; this.textInput = textInput &#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>类似双向数据绑定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;form className=&quot;p-5&quot; onSubmit=&#123;this.handSubmit&#125;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; className=&quot;form-control&quot; </span><br><span class="line">        ref=&#123;(textInput) =&gt;&#123; this.textInput = textInput &#125;&#125; /&gt;</span><br><span class="line">	&lt;button className=&quot;btn btn-primary&quot;&gt;留言&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;	</span><br><span class="line"></span><br><span class="line">handSubmit(event)&#123;</span><br><span class="line">this.props.onAddData(this.textInput.value)</span><br><span class="line">event.preventDefault()//阻止默认事件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当点击提交的时候调用 onAddData(event) 函数,然后在主页面绑定函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">construct(props)&#123;</span><br><span class="line">this.state = &#123;</span><br><span class="line">	comments:[&apos;信息&apos;]</span><br><span class="line">&#125;</span><br><span class="line">this.onAddData = this.onAddData.bind(this)</span><br><span class="line">&#125;</span><br><span class="line">addComment(comment) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      comments:[...this.state.comments,comment]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">... es6 函数方法 表示在旧的之后面追加新的值</span><br></pre></td></tr></table></figure></p>
+<h3 id="context"><a href="#context" class="headerlink" title="context"></a>context</h3><p>props 是由上到下的单向传递<br>Context 提供了在组件中共享此类值的方法</p>
 
       
     </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+    
 
+    
+
+    
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/aitao/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/aitao/tags/React/" rel="tag"><i class="fa fa-tag"></i> React</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/aitao/2018/11/05/React初体验/" rel="next" title="React初体验">
+                <i class="fa fa-chevron-left"></i> React初体验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/aitao/2018/11/07/PHPExcell导入导出相关学习/" rel="prev" title="PHPExcell导入导出相关学习">
+                PHPExcell导入导出相关学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui-button -mob-share-open">分享</div>
+<div class="-mob-share-ui" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-weixin"><p>微信</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=2886f3a7f23c5"></script>
+<!--MOB SHARE END-->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -361,6 +493,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -383,10 +519,19 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -473,6 +618,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局安装脚手架工具"><span class="nav-number">1.</span> <span class="nav-text">全局安装脚手架工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目"><span class="nav-number">2.</span> <span class="nav-text">创建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数"><span class="nav-number">2.1.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新组件"><span class="nav-number">2.2.</span> <span class="nav-text">更新组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-number">2.3.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单"><span class="nav-number">2.4.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#context"><span class="nav-number">2.5.</span> <span class="nav-text">context</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -625,6 +786,10 @@
 
 
   
+  <script type="text/javascript" src="/aitao/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/aitao/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

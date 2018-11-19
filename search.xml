@@ -6,15 +6,15 @@
     <content type="text"><![CDATA[gulp 前端构建工具小程序 不存在跨域使用pass 服务wafer 会话服务]]></content>
   </entry>
   <entry>
-    <title><![CDATA[Webpack学习初体验]]></title>
-    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16Webpack%E5%AD%A6%E4%B9%A0%E5%88%9D%E4%BD%93%E9%AA%8C%2F</url>
-    <content type="text"><![CDATA[webpack 用于编译 JavaScript 模块。一旦完成安装，你就可以通过 webpack 的 CLI 或 API 与其配合交互中文文档地址 安装node1.安装node npm 更新1npm install npm@latest -g npm 清除缓存1npm cache clean -f 开始webpack1.安装12npm install -g webpack --全局安装npm install --save-dev webpack --安装到目录 2.npm 5 以上如果在命令行使用需要安装webpackcli1npm install --save-dev webpack-cli 3.资源加载 加载css123456789安装并添加 style-loader 和 css-loader并加载npm install --save-dev style-loader css-loader &#123; test: /\.css$/, use: [ &apos;style-loader&apos;, &apos;css-loader&apos; ]&#125; 加载图片使用 file-loader，我们可以轻松地将这些内容混合到 CSS 中1npm install --save-dev file-loader 4.webpack 配置1234567module.exports = &#123; entry: __dirname './src/index.js', //入口文件 output: &#123; filename: 'bundle.js', path: path.resolve(__dirname, 'dist') &#125;,&#125;]]></content>
+    <title><![CDATA[常用CSS整合]]></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16%E5%B8%B8%E7%94%A8CSS%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829&lt;!-- 图片描述 --&gt;.img-desc &#123; color: #b9b9b9; text-align: center; font-size: 12px;&#125;&lt;!-- 更好看的分割线样式 --&gt;hr &#123; border: 0; border-bottom: 1px solid #ddd; margin-bottom: 25px; margin-top: 25px; box-shadow: 0 2px 0 rgba(229, 229, 229, 0.4);&#125;&lt;!-- 超链接 --&gt;a &#123; /* 腾讯的产品用户体验最好，腾讯系产品爱用的链接颜色 */ color: #3481cf;&#125;a:hover &#123; color: #00a4ff;&#125;&lt;!-- 文本处理 --&gt;/* 使得更显眼一点 */h1, h2, h3, h4, h5, h6, h7, b, strong &#123; text-shadow: 0 1px white; color: #000;&#125;]]></content>
       <categories>
         <category>前端资源模块化</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
-        <tag>Webpack</tag>
+        <tag>CSS</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -30,15 +30,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[常用CSS整合]]></title>
-    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16%E5%B8%B8%E7%94%A8CSS%2F</url>
-    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829&lt;!-- 图片描述 --&gt;.img-desc &#123; color: #b9b9b9; text-align: center; font-size: 12px;&#125;&lt;!-- 更好看的分割线样式 --&gt;hr &#123; border: 0; border-bottom: 1px solid #ddd; margin-bottom: 25px; margin-top: 25px; box-shadow: 0 2px 0 rgba(229, 229, 229, 0.4);&#125;&lt;!-- 超链接 --&gt;a &#123; /* 腾讯的产品用户体验最好，腾讯系产品爱用的链接颜色 */ color: #3481cf;&#125;a:hover &#123; color: #00a4ff;&#125;&lt;!-- 文本处理 --&gt;/* 使得更显眼一点 */h1, h2, h3, h4, h5, h6, h7, b, strong &#123; text-shadow: 0 1px white; color: #000;&#125;]]></content>
+    <title><![CDATA[Webpack学习初体验]]></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16Webpack%E5%AD%A6%E4%B9%A0%E5%88%9D%E4%BD%93%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[webpack 用于编译 JavaScript 模块。一旦完成安装，你就可以通过 webpack 的 CLI 或 API 与其配合交互中文文档地址 安装node1.安装node npm 更新1npm install npm@latest -g npm 清除缓存1npm cache clean -f 开始webpack1.安装12npm install -g webpack --全局安装npm install --save-dev webpack --安装到目录 2.npm 5 以上如果在命令行使用需要安装webpackcli1npm install --save-dev webpack-cli 3.资源加载 加载css123456789安装并添加 style-loader 和 css-loader并加载npm install --save-dev style-loader css-loader &#123; test: /\.css$/, use: [ &apos;style-loader&apos;, &apos;css-loader&apos; ]&#125; 加载图片使用 file-loader，我们可以轻松地将这些内容混合到 CSS 中1npm install --save-dev file-loader 4.webpack 配置1234567module.exports = &#123; entry: __dirname './src/index.js', //入口文件 output: &#123; filename: 'bundle.js', path: path.resolve(__dirname, 'dist') &#125;,&#125;]]></content>
       <categories>
         <category>前端资源模块化</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
-        <tag>HTML</tag>
+        <tag>Javascript</tag>
+        <tag>Webpack</tag>
       </tags>
   </entry>
   <entry>

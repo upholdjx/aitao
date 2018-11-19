@@ -297,165 +297,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/14/HTML5-File-Api/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jianxin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iaitao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/aitao/2018/11/14/HTML5-File-Api/" itemprop="url">HTML5_File_Api</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T10:00:21+08:00">
-                2018-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/aitao/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>该规范提供了一种API，用于表示Web应用程序中的文件对象，以及以编程方式选择它们并访问它们的数据。这包括：<br>一个FileList接口，表示来自底层系统的单独选择的文件的数组。当输入元素File Upload处于[HTML]状态时调用用于选择的用户界面。<br>一个Blob接口，表示不可变的原始二进制数据，并允许Blob作为单独的对象访问对象内的字节范围Blob。<br>一个File接口，包括有关文件的只读信息属性，例如其名称和文件的最后修改日期（在磁盘上）。<br>甲FileReader接口，它提供的方法来读取一个File或一个Blob，和一个事件模型获得的结果的这些读取。<br>用于二进制数据（如文件）的URL方案，以便可以在Web应用程序中引用它们。<br>此外，该规范定义了在线程Web应用程序中用于同步读取文件的对象。<a href="https://w3c.github.io/FileAPI/" target="_blank" rel="noopener">更多请看FileAPI</a><br>本文参考博客：<a href="https://www.cnblogs.com/zichi/p/html5-file-api.html" target="_blank" rel="noopener">HTML5 File API — 让前端操作文件变的可能–韩子迟（网名）</a></p>
-<h3 id="FileList接口"><a href="#FileList接口" class="headerlink" title="FileList接口"></a>FileList接口</h3><p>所有type属性(attribute)为file的 input 元素都有一个files属性(property),用来存储用户所选择的文件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> &gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.files[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果你想让用户选择多个文件，只需在input元素上使用multiple属性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"input"</span> <span class="attr">multiple</span> <span class="attr">onchange</span>=<span class="string">"handleFiles(this.files)"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h3><p>FileReader 对象采用异步方式读取文件，可以为一系列事件指定回调函数。<br>.onabort 方法：读取中断或调用 reader.abort() 方法时触发。<br>.onerror 方法：读取出错时触发。<br>.onload 方法：读取成功后触发。<br>.onloadend 方法：读取完成后触发，不管是否成功。触发顺序排在 onload 或 onerror 后面。<br>.onloadstart 方法：读取将要开始时触发。<br>.onprogress 方法：读取过程中周期性触发。（可以用来获取文件读取的进度）</p>
-<p>获取图片的base64编码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'file'</span> <span class="attr">multiple</span> <span class="attr">id</span>=<span class="string">"fileItem"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dataURL = reader.result;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(<span class="keyword">this</span>.files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> ipt = <span class="built_in">document</span>.querySelector(<span class="string">'textarea'</span>);</span><br><span class="line">ipt.ondragover = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line"><span class="comment">// Add drop handler</span></span><br><span class="line">ipt.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.stopPropagation();</span><br><span class="line">  e.preventDefault();</span><br><span class="line">  e = e || <span class="built_in">window</span>.event;</span><br><span class="line">  <span class="keyword">var</span> files = e.dataTransfer.files;</span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dataURL = reader.result;</span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'textarea'</span>).innerHTML = dataURL;</span><br><span class="line">  &#125;;</span><br><span class="line"> reader.readAsDataURL(files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>上传图片预览功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> files = <span class="keyword">this</span>.files;</span><br><span class="line">	<span class="built_in">document</span>.querySelector(<span class="string">"img"</span>).src = <span class="built_in">window</span>.URL.createObjectURL(files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="触发隐藏的inpt"><a href="#触发隐藏的inpt" class="headerlink" title="触发隐藏的inpt"></a>触发隐藏的inpt</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"fileElem"</span> <span class="attr">multiple</span> <span class="attr">accept</span>=<span class="string">"image/*"</span> <span class="attr">style</span>=<span class="string">"display:none"</span> <span class="attr">onchange</span>=<span class="string">"handleFiles(this.files)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"fileSelect"</span>&gt;</span>Select some files<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileSelect = <span class="built_in">document</span>.getElementById(<span class="string">"fileSelect"</span>),</span><br><span class="line">  fileElem = <span class="built_in">document</span>.getElementById(<span class="string">"fileElem"</span>);</span><br><span class="line"></span><br><span class="line">fileSelect.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (fileElem) &#123;</span><br><span class="line">    fileElem.click();</span><br><span class="line">  &#125;</span><br><span class="line">  e.preventDefault(); <span class="comment">// 避免导航到 "#"</span></span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">handleFiles</span>(<span class="params">argument</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(argument);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="js-页面打印"><a href="#js-页面打印" class="headerlink" title="js 页面打印"></a>js 页面打印</h3><blockquote>
-<p>所需要打印的代码，用<!--startprint1-->和<!--endprint1--></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function preview(oper)</span><br><span class="line">&#123;</span><br><span class="line">     if (oper &lt; 10)&#123;</span><br><span class="line">     bdhtml=window.document.body.innerHTML;//获取当前页的html代码</span><br><span class="line">     sprnstr=&quot;&lt;!--startprint&quot;+oper+&quot;--&gt;&quot;;//设置打印开始区域</span><br><span class="line">     eprnstr=&quot;&lt;!--endprint&quot;+oper+&quot;--&gt;&quot;;//设置打印结束区域</span><br><span class="line">     prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html</span><br><span class="line">     prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html</span><br><span class="line">     window.document.body.innerHTML=prnhtml;</span><br><span class="line">     window.print();</span><br><span class="line">     window.document.body.innerHTML=bdhtml;</span><br><span class="line">     &#125; else &#123;</span><br><span class="line">     window.print();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;input type=button class=&quot;btn btn-sky shiny btn-sm&quot; title=&apos;打印1&apos; onclick=preview(1) value=打印1&gt;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/13/html5全屏浏览/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1815,6 +1656,164 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/02/PHP常用字符串总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/02/PHP常用字符串总结/" itemprop="url">PHP常用字符串总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T09:16:32+08:00">
+                2018-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>PHP 是 “PHP Hypertext Preprocessor” 的首字母缩略词<br>PHP 是一种被广泛使用的开源脚本语言<br>PHP 脚本在服务器上执行<br>PHP 没有成本，可供免费下载和使用</p>
+<p>PHP 相关主流框架：<a href="https://www.kancloud.cn/manual/thinkphp5/118003" target="_blank" rel="noopener">thinkphp5.0 看云文档</a>  <a href="https://www.golaravel.com/" target="_blank" rel="noopener">laravel 中文社区</a>  <a href="https://www.kancloud.cn/manual/thinkphp5/118003" target="_blank" rel="noopener">Phalcon </a>  <a href="https://symfony.com/" target="_blank" rel="noopener">Symfony</a> 排列不分先后。</p>
+<blockquote>
+<p>本文对框架不做讨论</p>
+</blockquote>
+<h2 id="常用字符串函数及使用"><a href="#常用字符串函数及使用" class="headerlink" title="常用字符串函数及使用"></a>常用字符串函数及使用</h2><h3 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a>字符串大小写转换</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">'abc'</span>;</span><br><span class="line">$low_str = strtolower($str);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'转换为小写'</span>+$low_str;</span><br><span class="line">$uper_str = strtoupper($str);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'转换为大写'</span>+$uper_str;</span><br></pre></td></tr></table></figure>
+<h3 id="替换字符串中的字串"><a href="#替换字符串中的字串" class="headerlink" title="替换字符串中的字串"></a>替换字符串中的字串</h3><p>1.mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixed $length ] )<br>substr_replace()<br>在字符串 string 的副本中将由 start 和可选的 length 参数限定的子字符串使用 replacement 进行替换。<br>注：<br>    如果 start 为正数，替换将从 string 的 start 位置开始。<br>    如果 start 为负数，替换将从 string 的倒数第 start 个位置开始。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实列：</span><br><span class="line">$str = <span class="string">'abc'</span>;</span><br><span class="line">$new_str = substr_replace($str,<span class="string">'d'</span>,<span class="number">0</span>,$strlen($str));<span class="comment">//strlen() 函数计算字符串的长度</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'新的字串的值'</span>+$new_str;<span class="comment">//abcd</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>strtr()<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> strtr(<span class="string">"Hilla Warld"</span>,<span class="string">"ia"</span>,<span class="string">"eo"</span>);</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>More info: <a href="http://php.net/manual/zh/ref.strings.php" target="_blank" rel="noopener">php 文档</a></p>
+<h3 id="字符串与数组之间的相互转化"><a href="#字符串与数组之间的相互转化" class="headerlink" title="字符串与数组之间的相互转化"></a>字符串与数组之间的相互转化</h3><p>array explode ( string $delimiter , string $string [, int $limit ] )<br>此函数返回由字符串组成的数组，每个元素都是 string 的一个子串，它们被字符串 delimiter 作为边界点分割出来。<br>string implode ( string $glue , array $pieces ) //$glue 默认为空字符串<br>string implode ( array $pieces )<br>implode() 可以接收两种参数顺序，但是 explode() 不行。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">实例：</span><br><span class="line">$str = <span class="string">'a,b,c,d'</span>;<span class="comment">//逗号为分隔字符 相当于 $delimiter ='';</span></span><br><span class="line">$arr = explode(<span class="string">','</span>,$str);</span><br><span class="line">dump($arr);</span><br><span class="line">得到：</span><br><span class="line"><span class="keyword">array</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>] =&gt; string(<span class="number">1</span>) <span class="string">"a"</span></span><br><span class="line">  [<span class="number">1</span>] =&gt; string(<span class="number">1</span>) <span class="string">"b"</span></span><br><span class="line">  [<span class="number">2</span>] =&gt; string(<span class="number">1</span>) <span class="string">"c"</span></span><br><span class="line">  [<span class="number">3</span>] =&gt; string(<span class="number">1</span>) <span class="string">"d"</span></span><br><span class="line">&#125;</span><br><span class="line">$new_str = implode($arr);</span><br><span class="line"><span class="keyword">echo</span> $new_str;<span class="comment">//abcd</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1873,7 +1872,7 @@
               
                 <a href="/aitao/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

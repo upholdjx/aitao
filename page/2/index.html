@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -98,7 +98,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/aitao/',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/14/HTML5-File-Api/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianxin">
@@ -316,7 +316,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/aitao/2018/11/01/hello-world/" itemprop="url">PHP 常用字符串的比较</a></h1>
+                <a class="post-title-link" href="/aitao/2018/11/14/HTML5-File-Api/" itemprop="url">HTML5_File_Api</a></h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,471 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-01T14:54:29+08:00">
-                2018-11-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T10:00:21+08:00">
+                2018-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>该规范提供了一种API，用于表示Web应用程序中的文件对象，以及以编程方式选择它们并访问它们的数据。这包括：<br>一个FileList接口，表示来自底层系统的单独选择的文件的数组。当输入元素File Upload处于[HTML]状态时调用用于选择的用户界面。<br>一个Blob接口，表示不可变的原始二进制数据，并允许Blob作为单独的对象访问对象内的字节范围Blob。<br>一个File接口，包括有关文件的只读信息属性，例如其名称和文件的最后修改日期（在磁盘上）。<br>甲FileReader接口，它提供的方法来读取一个File或一个Blob，和一个事件模型获得的结果的这些读取。<br>用于二进制数据（如文件）的URL方案，以便可以在Web应用程序中引用它们。<br>此外，该规范定义了在线程Web应用程序中用于同步读取文件的对象。<a href="https://w3c.github.io/FileAPI/" target="_blank" rel="noopener">更多请看FileAPI</a><br>本文参考博客：<a href="https://www.cnblogs.com/zichi/p/html5-file-api.html" target="_blank" rel="noopener">HTML5 File API — 让前端操作文件变的可能–韩子迟（网名）</a></p>
+<h3 id="FileList接口"><a href="#FileList接口" class="headerlink" title="FileList接口"></a>FileList接口</h3><p>所有type属性(attribute)为file的 input 元素都有一个files属性(property),用来存储用户所选择的文件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> &gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.files[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你想让用户选择多个文件，只需在input元素上使用multiple属性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"input"</span> <span class="attr">multiple</span> <span class="attr">onchange</span>=<span class="string">"handleFiles(this.files)"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h3><p>FileReader 对象采用异步方式读取文件，可以为一系列事件指定回调函数。<br>.onabort 方法：读取中断或调用 reader.abort() 方法时触发。<br>.onerror 方法：读取出错时触发。<br>.onload 方法：读取成功后触发。<br>.onloadend 方法：读取完成后触发，不管是否成功。触发顺序排在 onload 或 onerror 后面。<br>.onloadstart 方法：读取将要开始时触发。<br>.onprogress 方法：读取过程中周期性触发。（可以用来获取文件读取的进度）</p>
+<p>获取图片的base64编码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'file'</span> <span class="attr">multiple</span> <span class="attr">id</span>=<span class="string">"fileItem"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dataURL = reader.result;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(<span class="keyword">this</span>.files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> ipt = <span class="built_in">document</span>.querySelector(<span class="string">'textarea'</span>);</span><br><span class="line">ipt.ondragover = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line"><span class="comment">// Add drop handler</span></span><br><span class="line">ipt.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.stopPropagation();</span><br><span class="line">  e.preventDefault();</span><br><span class="line">  e = e || <span class="built_in">window</span>.event;</span><br><span class="line">  <span class="keyword">var</span> files = e.dataTransfer.files;</span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dataURL = reader.result;</span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'textarea'</span>).innerHTML = dataURL;</span><br><span class="line">  &#125;;</span><br><span class="line"> reader.readAsDataURL(files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上传图片预览功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> files = <span class="keyword">this</span>.files;</span><br><span class="line">	<span class="built_in">document</span>.querySelector(<span class="string">"img"</span>).src = <span class="built_in">window</span>.URL.createObjectURL(files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="触发隐藏的inpt"><a href="#触发隐藏的inpt" class="headerlink" title="触发隐藏的inpt"></a>触发隐藏的inpt</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"fileElem"</span> <span class="attr">multiple</span> <span class="attr">accept</span>=<span class="string">"image/*"</span> <span class="attr">style</span>=<span class="string">"display:none"</span> <span class="attr">onchange</span>=<span class="string">"handleFiles(this.files)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"fileSelect"</span>&gt;</span>Select some files<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileSelect = <span class="built_in">document</span>.getElementById(<span class="string">"fileSelect"</span>),</span><br><span class="line">  fileElem = <span class="built_in">document</span>.getElementById(<span class="string">"fileElem"</span>);</span><br><span class="line"></span><br><span class="line">fileSelect.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (fileElem) &#123;</span><br><span class="line">    fileElem.click();</span><br><span class="line">  &#125;</span><br><span class="line">  e.preventDefault(); <span class="comment">// 避免导航到 "#"</span></span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">handleFiles</span>(<span class="params">argument</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(argument);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="js-页面打印"><a href="#js-页面打印" class="headerlink" title="js 页面打印"></a>js 页面打印</h3><blockquote>
+<p>所需要打印的代码，用<!--startprint1-->和<!--endprint1--></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function preview(oper)</span><br><span class="line">&#123;</span><br><span class="line">     if (oper &lt; 10)&#123;</span><br><span class="line">     bdhtml=window.document.body.innerHTML;//获取当前页的html代码</span><br><span class="line">     sprnstr=&quot;&lt;!--startprint&quot;+oper+&quot;--&gt;&quot;;//设置打印开始区域</span><br><span class="line">     eprnstr=&quot;&lt;!--endprint&quot;+oper+&quot;--&gt;&quot;;//设置打印结束区域</span><br><span class="line">     prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html</span><br><span class="line">     prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html</span><br><span class="line">     window.document.body.innerHTML=prnhtml;</span><br><span class="line">     window.print();</span><br><span class="line">     window.document.body.innerHTML=bdhtml;</span><br><span class="line">     &#125; else &#123;</span><br><span class="line">     window.print();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;input type=button class=&quot;btn btn-sky shiny btn-sm&quot; title=&apos;打印1&apos; onclick=preview(1) value=打印1&gt;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/13/html5全屏浏览/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/13/html5全屏浏览/" itemprop="url">html5全屏浏览</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T17:49:02+08:00">
+                2018-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>不多解释h5的特性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;entry_screen&quot;&gt;全屏显示&lt;/div&gt;</span><br><span class="line">&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;exit_screen&quot;&gt;退出全屏显示&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//进入全屏</span><br><span class="line">function enterFullScreen() &#123;</span><br><span class="line">    var de = document.documentElement;</span><br><span class="line">    if (de.requestFullscreen) &#123;</span><br><span class="line">        de.requestFullscreen();</span><br><span class="line">    &#125; else if (de.mozRequestFullScreen) &#123;</span><br><span class="line">        de.mozRequestFullScreen();</span><br><span class="line">    &#125; else if (de.webkitRequestFullScreen) &#123;</span><br><span class="line">        de.webkitRequestFullScreen();</span><br><span class="line">    &#125;</span><br><span class="line">    $(&quot;#exit_screen&quot;)[0].style.display = &apos;block&apos;;</span><br><span class="line">    $(&quot;#entry_screen&quot;)[0].style.display = &apos;none&apos;;</span><br><span class="line">&#125;</span><br><span class="line">//退出全屏</span><br><span class="line">function exitFullScreen() &#123;</span><br><span class="line">    var de = document;</span><br><span class="line">    if (de.exitFullscreen) &#123;</span><br><span class="line">        de.exitFullscreen();</span><br><span class="line">    &#125; else if (de.mozCancelFullScreen) &#123;</span><br><span class="line">        de.mozCancelFullScreen();</span><br><span class="line">    &#125; else if (de.webkitCancelFullScreen) &#123;</span><br><span class="line">        de.webkitCancelFullScreen();</span><br><span class="line">    &#125;</span><br><span class="line">    $(&quot;#exit_screen&quot;)[0].style.display = &apos;none&apos;;</span><br><span class="line">    $(&quot;#entry_screen&quot;)[0].style.display = &apos;block&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.cnblogs.com/zichi/p/html5-file-api.html" target="_blank" rel="noopener">https://www.cnblogs.com/zichi/p/html5-file-api.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/10/Echarts等图表学习/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/10/Echarts等图表学习/" itemprop="url">Echarts等图表学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-10T16:42:49+08:00">
+                2018-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/Echarts/" itemprop="url" rel="index">
+                    <span itemprop="name">Echarts</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>ECharts，一个使用 JavaScript 实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的矢量图形库 ZRender，提供直观，交互丰富，可高度个性化定制的数据可视化图表。<a href="https://github.com/apache/incubator-echarts" target="_blank" rel="noopener">github地址</a></p>
+<h3 id="关于样式看官网"><a href="#关于样式看官网" class="headerlink" title="关于样式看官网"></a>关于样式看官网</h3><p>简单的一个饼图为例，使用图标数据可点击,引入的库如下，需要注意的是jquery 必须在layer之前引入！</p>
+<blockquote>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts.js"></script>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"main"</span> style=<span class="string">"width: 600px;height:400px;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="keyword">var</span> myChart = echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'main'</span>));</span><br><span class="line">option = &#123;</span><br><span class="line">    title : &#123;</span><br><span class="line">        text: <span class="string">'编程语言榜'</span>,</span><br><span class="line">        subtext: <span class="string">'2018年11月'</span>,</span><br><span class="line">        x:<span class="string">'center'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    tooltip : &#123;</span><br><span class="line">        trigger: <span class="string">'item'</span>,</span><br><span class="line">        formatter: <span class="string">"&#123;a&#125; &lt;br/&gt;&#123;b&#125; : &#123;c&#125; (&#123;d&#125;%)"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    legend: &#123;</span><br><span class="line">        orient: <span class="string">'vertical'</span>,</span><br><span class="line">        left: <span class="string">'left'</span>,</span><br><span class="line">        data: [<span class="string">'JAVA'</span>,<span class="string">'C'</span>,<span class="string">'PYTHON'</span>,<span class="string">'PHP'</span>,<span class="string">'JAVASCRIPT'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    series : [</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'访问来源'</span>,</span><br><span class="line">            type: <span class="string">'pie'</span>,</span><br><span class="line">            radius : <span class="string">'55%'</span>,</span><br><span class="line">            center: [<span class="string">'50%'</span>, <span class="string">'60%'</span>],</span><br><span class="line">            data:[</span><br><span class="line">                &#123;<span class="attr">value</span>:<span class="number">335</span>, <span class="attr">name</span>:<span class="string">'C'</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">value</span>:<span class="number">310</span>, <span class="attr">name</span>:<span class="string">'PYTHON'</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">value</span>:<span class="number">234</span>, <span class="attr">name</span>:<span class="string">'PHP'</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">value</span>:<span class="number">135</span>, <span class="attr">name</span>:<span class="string">'JAVASCRIPT'</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">value</span>:<span class="number">1548</span>, <span class="attr">name</span>:<span class="string">'JAVA'</span>&#125;</span><br><span class="line">            ],</span><br><span class="line">            itemStyle: &#123;</span><br><span class="line">                emphasis: &#123;</span><br><span class="line">                    shadowBlur: <span class="number">10</span>,</span><br><span class="line">                    shadowOffsetX: <span class="number">0</span>,</span><br><span class="line">                    shadowColor: <span class="string">'rgba(0, 0, 0, 0.5)'</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br><span class="line">myChart.setOption(option);</span><br><span class="line"><span class="keyword">if</span> (myChart &amp;&amp; <span class="keyword">typeof</span> option === <span class="string">"object"</span>) &#123;</span><br><span class="line">	myChart.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">argument</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> url = <span class="string">'register.html?param='</span>+argument.name;<span class="comment">//点击的值如：JAVA</span></span><br><span class="line">		layer.open(&#123;</span><br><span class="line">			type:<span class="number">2</span>,</span><br><span class="line">			shadeClose:<span class="literal">true</span>,</span><br><span class="line">			anim:<span class="number">3</span>,</span><br><span class="line">			maxmin:<span class="literal">true</span>,</span><br><span class="line">			area:[<span class="string">'80%'</span>,<span class="string">'85%'</span>],</span><br><span class="line">			content:[url,<span class="string">'no'</span>]</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="异步数据加载"><a href="#异步数据加载" class="headerlink" title="异步数据加载"></a>异步数据加载</h3><p>首先设置加载等待样式，当数据加载完成之后隐藏等待样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">默认的为</span><br><span class="line">default: &#123;</span><br><span class="line">  text: &apos;loading&apos;,//加载字体</span><br><span class="line">  color: &apos;#c23531&apos;,//加载颜色</span><br><span class="line">  textColor: &apos;#000&apos;,//加载字体颜色</span><br><span class="line">  maskColor: &apos;rgba(255, 255, 255, 0.8)&apos;,//加载背景遮罩层</span><br><span class="line">  zlevel: 0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">简单的隐藏样式</span><br><span class="line">var showLoading = &#123;</span><br><span class="line">    maskColor : &apos;rgba(255, 255, 255, 0.8)&apos;,</span><br><span class="line">    &apos;text&apos;:&apos;数据加载中...&apos;,</span><br><span class="line">    color:&apos;#FFA537&apos;,</span><br><span class="line">    textColor:&apos;#000&apos;</span><br><span class="line">&#125;;</span><br><span class="line">myChart.showLoading();</span><br><span class="line">$.post(&quot;url&quot;,function(d)&#123;</span><br><span class="line">	myChart.hideLoading();</span><br><span class="line">	option = &#123;&#125;;//将post 返回的值放进去</span><br><span class="line">	myChart.setOption(option);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="highcharts-使用体验"><a href="#highcharts-使用体验" class="headerlink" title="highcharts 使用体验"></a>highcharts 使用体验</h3><p>下载js或者引入库<a href="https://www.hcharts.cn/products/highcharts" target="_blank" rel="noopener">官网地址</a></p>
+<blockquote>
+<p><script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script><br>还是先来个官网的简单例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;container&quot; style=&quot;max-width:800px;height:400px&quot;&gt;&lt;/div&gt;</span><br><span class="line">options = &#123;</span><br><span class="line">		title: &#123;</span><br><span class="line">			text: &apos;基本折线图&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">		subtitle: &#123;</span><br><span class="line">			text: &apos;数据来源：hcharts 图表&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">		yAxis: &#123;</span><br><span class="line">			title: &#123;</span><br><span class="line">				text: &apos;关注人数&apos;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		legend: &#123;</span><br><span class="line">			layout: &apos;vertical&apos;,</span><br><span class="line">			align: &apos;right&apos;,</span><br><span class="line">			verticalAlign: &apos;middle&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">		plotOptions: &#123;</span><br><span class="line">			series: &#123;</span><br><span class="line">				label: &#123;</span><br><span class="line">					connectorAllowed: false</span><br><span class="line">				&#125;,</span><br><span class="line">				pointStart: 2011</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		series: data,//数据</span><br><span class="line">		responsive: &#123;</span><br><span class="line">			rules: [</span><br><span class="line">				&#123;</span><br><span class="line">					condition: &#123;</span><br><span class="line">						maxWidth: 500</span><br><span class="line">					&#125;,</span><br><span class="line">					chartOptions: &#123;</span><br><span class="line">						legend: &#123;</span><br><span class="line">							layout: &apos;horizontal&apos;,</span><br><span class="line">							align: &apos;center&apos;,</span><br><span class="line">							verticalAlign: &apos;bottom&apos;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	var chart = Highcharts.chart(&apos;container&apos;,options);</span><br><span class="line">	和echarts 差不多，也有加载等待异步加载</span><br><span class="line">	chart.showLoading(&apos;正在加载中...&apos;);//加载中</span><br><span class="line">	chart.hideLoading();//隐藏</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/09/PDO使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/09/PDO使用/" itemprop="url">PDO使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-09T13:45:41+08:00">
+                2018-11-09
               </time>
             
 
@@ -390,17 +853,22 @@
       
         
           
-            <p>PHP 是 “PHP Hypertext Preprocessor” 的首字母缩略词<br>PHP 是一种被广泛使用的开源脚本语言<br>PHP 脚本在服务器上执行<br>PHP 没有成本，可供免费下载和使用</p>
-<p>PHP 相关主流框架：<a href="https://www.kancloud.cn/manual/thinkphp5/118003" target="_blank" rel="noopener">thinkphp5.0 看云文档</a>  <a href="https://www.golaravel.com/" target="_blank" rel="noopener">laravel 中文社区</a>  <a href="https://www.kancloud.cn/manual/thinkphp5/118003" target="_blank" rel="noopener">Phalcon </a>  <a href="https://symfony.com/" target="_blank" rel="noopener">Symfony</a> 排列不分先后。</p>
+            <p>PDO(php data object) 数据库访问抽象层,PDO可以访问12种不同的数据库</p>
+<p>开启PDO步骤:<br>找到php.ini 、开启:pod_myql_dll扩展 、重启apache 、验证是否登录成功</p>
+<p>PDO 主要类别</p>
 <blockquote>
-<p>本文对框架不做讨论</p>
+<p>PDO类:主要用户数据库连接,发送sql语句<br>PDOStatement类:主要用来解释结果集,实现预处理,事物处理<br>PDOException类:主要用于捕获PDO异常 </p>
 </blockquote>
-<h2 id="常用字符串函数及使用"><a href="#常用字符串函数及使用" class="headerlink" title="常用字符串函数及使用"></a>常用字符串函数及使用</h2><h3 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a>字符串大小写转换</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">'abc'</span>;</span><br><span class="line">$low_str = strtolower($str);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'转换为小写'</span>+$low_str;</span><br><span class="line">$uper_str = strtoupper($str);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'转换为大写'</span>+$uper_str;</span><br></pre></td></tr></table></figure>
-<h3 id="替换字符串中的字串"><a href="#替换字符串中的字串" class="headerlink" title="替换字符串中的字串"></a>替换字符串中的字串</h3><p>mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixed $length ] )<br>substr_replace()<br>在字符串 string 的副本中将由 start 和可选的 length 参数限定的子字符串使用 replacement 进行替换。<br>注：<br>    如果 start 为正数，替换将从 string 的 start 位置开始。<br>    如果 start 为负数，替换将从 string 的倒数第 start 个位置开始。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实列：</span><br><span class="line">$str = <span class="string">'abc'</span>;</span><br><span class="line">$new_str = substr_replace($str,<span class="string">'d'</span>,<span class="number">0</span>,$strlen($str));<span class="comment">//strlen() 函数计算字符串的长度</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'新的字串的值'</span>+$new_str;<span class="comment">//abcd</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://php.net/manual/zh/ref.strings.php" target="_blank" rel="noopener">php 文档</a></p>
-<h3 id="字符串与数组之间的相互转化"><a href="#字符串与数组之间的相互转化" class="headerlink" title="字符串与数组之间的相互转化"></a>字符串与数组之间的相互转化</h3><p>array explode ( string $delimiter , string $string [, int $limit ] )<br>此函数返回由字符串组成的数组，每个元素都是 string 的一个子串，它们被字符串 delimiter 作为边界点分割出来。<br>string implode ( string $glue , array $pieces ) //$glue 默认为空字符串<br>string implode ( array $pieces )<br>implode() 可以接收两种参数顺序，但是 explode() 不行。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">实例：</span><br><span class="line">$str = <span class="string">'a,b,c,d'</span>;<span class="comment">//逗号为分隔字符 相当于 $delimiter ='';</span></span><br><span class="line">$arr = explode(<span class="string">','</span>,$str);</span><br><span class="line">dump($arr);</span><br><span class="line">得到：</span><br><span class="line"><span class="keyword">array</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>] =&gt; string(<span class="number">1</span>) <span class="string">"a"</span></span><br><span class="line">  [<span class="number">1</span>] =&gt; string(<span class="number">1</span>) <span class="string">"b"</span></span><br><span class="line">  [<span class="number">2</span>] =&gt; string(<span class="number">1</span>) <span class="string">"c"</span></span><br><span class="line">  [<span class="number">3</span>] =&gt; string(<span class="number">1</span>) <span class="string">"d"</span></span><br><span class="line">&#125;</span><br><span class="line">$new_str = implode($arr);</span><br><span class="line"><span class="keyword">echo</span> $new_str;<span class="comment">//abcd</span></span><br></pre></td></tr></table></figure>
+<h3 id="开始连接"><a href="#开始连接" class="headerlink" title="开始连接"></a>开始连接</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$dns = <span class="string">'mysql:dbname=demo;host=localhost;port=3306'</span>;  <span class="comment">//数据源名称 本文使用MySQL</span></span><br><span class="line">$username = <span class="string">'root'</span>;<span class="comment">//数据库账号</span></span><br><span class="line">$password = <span class="string">'root'</span>;<span class="comment">//数据库密码</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	$pdo = <span class="keyword">new</span> PDO($dns, $username, $password);</span><br><span class="line">&#125;<span class="keyword">catch</span>(PDOException $e) &#123;</span><br><span class="line">	<span class="keyword">die</span>(<span class="string">'数据库连接失败：&lt;br/&gt;'</span> . $e);</span><br><span class="line">&#125;</span><br><span class="line">$pdo-&gt;setAttribute(PDO::ATTR_EMULATE_PREPARES,<span class="keyword">false</span>);<span class="comment">//选择连接失败的时候处理异常</span></span><br></pre></td></tr></table></figure>
+<h3 id="查询–execute"><a href="#查询–execute" class="headerlink" title="查询–execute"></a>查询–execute</h3><p>例如:检测用户登录 –校验用户名密码是否匹配，密码使用MD5加密。</p>
+<blockquote>
+<p>query用来处理有结果集的，如select， 返回 PDOStatement 对象，失败返回false（当为 PDO::ERRMODE_SILENT，这也是默认的值）<br>exec用来处理有返回影响行数的（int），如  insert（插入的行数）、 delete（删除的行数） 、update（和原数值不等才算）， 失败返回false （当为 PDO::ERRMODE_SILENT，这也是默认的值）<br>prepare 执行所有sql，可以完全替代 query,exec的功能</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$sql =<span class="string">'SELECT * FROM `user` WHERE `name`=:username AND `password`=:password'</span>;</span><br><span class="line">$stmt = $pdo-&gt;prepare($sql);</span><br><span class="line">$password = $md5($password);</span><br><span class="line">$stmt -&gt;bindParam(<span class="string">':username'</span>,$username);<span class="comment">//绑定参数</span></span><br><span class="line">$stmt -&gt;bindParam(<span class="string">':password'</span>,$password);</span><br><span class="line">$stmt-&gt;execute();</span><br><span class="line">$user = $stmt-&gt;fetch(PDO::FETCH_ASSOC);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>($user)) &#123;</span><br><span class="line">	<span class="keyword">throw</span> <span class="keyword">new</span> MyHttpException(<span class="number">500</span>, <span class="string">'用户名或密码错误'</span>);<span class="comment">//抛出异常</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>pdo中有两种占位符号<br> 1、? 参数             — 索引数组， 按索引顺序使用<br> 2、名子参数           —-关联数组， 按名称使用，和顺序无关<br>当使用占位符的时候需要绑定参数，如果使用?的适合数组下标必须从0开始，例子如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$sql = &apos;INSERT INTO `user` VALUES(null,?,?)&apos;;</span><br><span class="line">$stmt = $pdo-&gt;prepare($sql);</span><br><span class="line">$data = [</span><br><span class="line">	0=&gt;&apos;username&apos;,</span><br><span class="line">	1=&gt;&apos;password&apos;,</span><br><span class="line">];</span><br><span class="line">$pdo-&gt;beginTransaction(); //开启事物</span><br><span class="line">$stmt-&gt;execute($data);</span><br><span class="line">$result[&apos;user_id&apos;] = $pdo-&gt;lastInsertId(); //最后插入的id,有多条时返回的是第一条的id</span><br><span class="line">if(!empty($result[&apos;user_id&apos;])) &#123;</span><br><span class="line">	$pdo-&gt;commit();//插入成功，提交事物</span><br><span class="line">&#125;else &#123;</span><br><span class="line">	$pdo-&gt;rollBack(); //插入失败，回滚事物</span><br><span class="line">	throw new MyHttpException(500, &apos;插入失败&apos;);//抛出异常</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>查询单条记录的时候可以使用 fetch(PDO::FETCH_ASSOC);<br>当查询有多条记录的时候使用 fetchAll(PDO::FETCH_ASSOC);</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">栗子：</span><br><span class="line">查询文章详情 --- 单条</span><br><span class="line"></span><br><span class="line">$sql = <span class="string">'SELECT * FROM `article` WHERE `id` =:articleId'</span>;</span><br><span class="line">$stmt = $pdo-&gt;prepare($sql);</span><br><span class="line">$createTime = time();</span><br><span class="line">$stmt -&gt;bindParam(<span class="string">':articleId'</span>,$articleId);</span><br><span class="line">$stmt-&gt;execute();</span><br><span class="line">$article = $stmt-&gt;fetch(PDO::FETCH_ASSOC);</span><br><span class="line"></span><br><span class="line">查询多条文章 --- 可以加入分页控制</span><br><span class="line">传入的参数 如： $userId,$page=<span class="number">1</span>,$limit=<span class="number">10</span></span><br><span class="line"></span><br><span class="line">$sql = <span class="string">'SELECT * FROM `article` WHERE `user_id`=:userId ORDER BY `id` DESC LIMIT :offset,:limit'</span>;</span><br><span class="line">$offset = ($page - <span class="number">1</span>) * $limit;</span><br><span class="line"><span class="keyword">if</span> ($offset &lt; <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">	$offset = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">$stmt = $pdo-&gt;prepare($sql);</span><br><span class="line">$stmt-&gt;bindParam(<span class="string">':userId'</span>, $userId, PDO::PARAM_INT);</span><br><span class="line">$stmt-&gt;bindParam(<span class="string">':offset'</span>, $offset, PDO::PARAM_INT);</span><br><span class="line">$stmt-&gt;bindParam(<span class="string">':limit'</span>, $limit, PDO::PARAM_INT);</span><br><span class="line">$stmt-&gt;execute();</span><br><span class="line">$data = $stmt-&gt;fetchAll(PDO::FETCH_ASSOC);</span><br></pre></td></tr></table></figure>
+<p>关于访问其他数据库自行折腾，下面是访问Oracle的感兴趣的可以去看看。<br><a href="http://www.php.cn/php-weizijiaocheng-379757.html" target="_blank" rel="noopener">php如何利用PDO访问oracle数据库的方法详解</a><br>本文参考文章<br><a href="https://www.cnblogs.com/siqi/p/3774871.html" target="_blank" rel="noopener">思齐博客–PDO 用法学习</a><br><a href="http://www.php.cn/php-weizijiaocheng-383295.html" target="_blank" rel="noopener">PHP中文网–PHP之详解PDO</a></p>
 
           
         
@@ -452,7 +920,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/01/存储/">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/07/PHPExcell导入导出相关学习/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianxin">
@@ -471,7 +939,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/aitao/2018/11/01/存储/" itemprop="url">第一篇文章 localStorage 存储</a></h1>
+                <a class="post-title-link" href="/aitao/2018/11/07/PHPExcell导入导出相关学习/" itemprop="url">PHPExcell导入导出相关学习</a></h1>
         
 
         <div class="post-meta">
@@ -483,8 +951,484 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-01T11:54:29+08:00">
-                2018-11-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T15:51:48+08:00">
+                2018-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本项目github 上官方已经放弃维护，官方推荐：<a href="https://github.com/PHPOffice/PhpSpreadsheet" target="_blank" rel="noopener">PhpSpreadsheet</a> 具体自行尝试。</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>引入文件<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">扩展安装</span><br><span class="line">composer <span class="keyword">require</span> phpoffice/phpexcel</span><br><span class="line"><span class="keyword">use</span> <span class="title">PHPExcel</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PHPExcel_Style_Alignment</span>;<span class="comment">//如果需要定义样式需要引入此文件</span></span><br><span class="line">使用</span><br><span class="line">$objPHPExcel = <span class="keyword">new</span> PHPExcel();</span><br></pre></td></tr></table></figure></p>
+<h3 id="合并拆分单元格"><a href="#合并拆分单元格" class="headerlink" title="合并拆分单元格"></a>合并拆分单元格</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;mergeCells(<span class="string">'A1:A2'</span>);<span class="comment">//合并单元格</span></span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;unmergeCells( <span class="string">'A28:B28'</span>);<span class="comment">// A28:B28再拆分</span></span><br></pre></td></tr></table></figure>
+<h3 id="获得合并后的单元格"><a href="#获得合并后的单元格" class="headerlink" title="获得合并后的单元格"></a>获得合并后的单元格</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$mergeInfo = $objPHPExcel-&gt;getActiveSheet()-&gt;getMergeCells();</span><br><span class="line"><span class="comment">//获得合并后的单元格 格式例如：A1:B1 ...</span></span><br></pre></td></tr></table></figure>
+<h3 id="样式设置"><a href="#样式设置" class="headerlink" title="样式设置"></a>样式设置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">字体加粗、居中、</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1:X2'</span>)-&gt;applyFromArray(</span><br><span class="line">    <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">'font'</span> =&gt; <span class="keyword">array</span> (</span><br><span class="line">            <span class="string">'bold'</span> =&gt; <span class="keyword">true</span></span><br><span class="line">        ),</span><br><span class="line">         <span class="string">'alignment'</span> =&gt; <span class="keyword">array</span> (</span><br><span class="line">                <span class="string">'horizontal'</span> =&gt; PHPExcel_Style_Alignment::HORIZONTAL_RIGHT ,</span><br><span class="line">         ),</span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>填充背景色<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//设置填充的样式和背景色</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle( &apos;A1:E1&apos;)-&gt;getFill()-&gt;setFillType(PHPExcel_Style_Fill::FILL_SOLID);</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle( &apos;A1:E1&apos;)-&gt;getFill()-&gt;getStartColor()-&gt;setARGB(&apos;FF808080&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>设置列的宽度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$objActSheet-&gt;getColumnDimension( &apos;B&apos;)-&gt;setAutoSize(true);   //内容自适应</span><br><span class="line">$objActSheet-&gt;getColumnDimension( &apos;A&apos;)-&gt;setWidth(30);         //30宽</span><br></pre></td></tr></table></figure>
+<h3 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$xlsTitle = iconv(<span class="string">'utf-8'</span>, <span class="string">'gb2312'</span>, <span class="string">'下载文件'</span>);<span class="comment">//文件名称</span></span><br><span class="line">$fileName = $title.date(<span class="string">'_YmdHis'</span>);<span class="comment">//文件名称</span></span><br><span class="line"></span><br><span class="line">header(<span class="string">'pragma:public'</span>);</span><br><span class="line">header(<span class="string">'Content-type:application/vnd.ms-excel;charset=utf-8;name="'</span>.$xlsTitle.<span class="string">'.xls"'</span>);</span><br><span class="line">header(<span class="string">"Content-Disposition:attachment;filename=$fileName.xls"</span>);<span class="comment">//attachment新窗口打印inline本窗口打印</span></span><br><span class="line">$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, <span class="string">'Excel5'</span>);</span><br><span class="line">$objWriter-&gt;save(<span class="string">'php://output'</span>);</span><br><span class="line"><span class="keyword">exit</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="导出实例"><a href="#导出实例" class="headerlink" title="导出实例"></a>导出实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">public function exportExcel($title,$list)&#123;</span><br><span class="line">$objPHPExcel = new PHPExcel();</span><br><span class="line">$xlsTitle = iconv(&apos;utf-8&apos;, &apos;gb2312&apos;, $title);//文件名称</span><br><span class="line">   $fileName = $title.date(&apos;_YmdHis&apos;);//文件名称</span><br><span class="line">   $topNumber = 1;//第一行表头</span><br><span class="line">   $topNumber2 = 2;//第二行表头</span><br><span class="line">   $cellKey = [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;D&apos;,&apos;E&apos;];</span><br><span class="line">   //处理表头标题</span><br><span class="line">   $objPHPExcel-&gt;getActiveSheet()-&gt;mergeCells(&apos;A1:A2&apos;);</span><br><span class="line">   $objPHPExcel-&gt;getActiveSheet()-&gt;mergeCells(&apos;B1:B2&apos;);</span><br><span class="line">   $data[0] = array(&apos;名称&apos;, &apos;变量&apos;,&apos;数字&apos;);</span><br><span class="line">   $data[1] = array(&apos;&apos;,&apos;&apos;,&apos;大&apos;, &apos;中&apos;,&apos;小&apos;);</span><br><span class="line">$objPHPExcel-&gt;getActiveSheet()-&gt;mergeCells(&apos;C1:E1&apos;);</span><br><span class="line">  	$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:E2&apos;)-&gt;applyFromArray(</span><br><span class="line">    array(</span><br><span class="line">        &apos;font&apos; =&gt; array (</span><br><span class="line">            &apos;bold&apos; =&gt; true</span><br><span class="line">        ),</span><br><span class="line">         &apos;alignment&apos; =&gt; array (</span><br><span class="line">                &apos;horizontal&apos; =&gt; PHPExcel_Style_Alignment::HORIZONTAL_RIGHT ,</span><br><span class="line">         ),</span><br><span class="line">    )</span><br><span class="line">);</span><br><span class="line">//设置表头加粗</span><br><span class="line">   foreach ($cellKey as $key =&gt; $value) &#123;</span><br><span class="line">       $objPHPExcel-&gt;setActiveSheetIndex(0)-&gt;setCellValue($cellKey[$key].$topNumber2, $data[1][$key]);//设置表头数据</span><br><span class="line">   &#125;</span><br><span class="line">   $mergeInfo = $objPHPExcel-&gt;getActiveSheet()-&gt;getMergeCells();//获得合并后的单元格</span><br><span class="line">   $new_arr = [];</span><br><span class="line">   foreach ($mergeInfo as $key =&gt; $value) &#123;</span><br><span class="line">       $new_arr[] = substr($value,0,2);//分割合并后的单元格 获得单列</span><br><span class="line">   &#125;</span><br><span class="line">   foreach ($new_arr as $key =&gt; $value) &#123;</span><br><span class="line">      $objPHPExcel-&gt;setActiveSheetIndex(0)-&gt;setCellValue($value, $data[0][$key]);//设置表头数据</span><br><span class="line">   &#125;</span><br><span class="line">   //导出数据模拟</span><br><span class="line">  	$data_list[0] = [</span><br><span class="line">	&apos;name&apos;=&gt;&apos;hhh&apos;,</span><br><span class="line">	&apos;variable&apos;=&gt;&apos;卫星人&apos;,</span><br><span class="line">	&apos;large&apos;=&gt;12,</span><br><span class="line">	&apos;in&apos;=&gt;20,</span><br><span class="line">	&apos;small&apos;=&gt;222</span><br><span class="line">  	];</span><br><span class="line">  	foreach($data_list as $k=&gt;$v) &#123;</span><br><span class="line">  		$data[$k + 2] = array(</span><br><span class="line">               $v[&apos;name&apos;], $v[&apos;variable&apos;],</span><br><span class="line">               $v[&apos;large&apos;], $v[&apos;in&apos;],</span><br><span class="line">               $v[&apos;small&apos;]</span><br><span class="line">           );</span><br><span class="line">       //加载数据 从第三行开始加入</span><br><span class="line">       foreach ($cellKey as $key =&gt; $value) &#123;</span><br><span class="line">           $number = $k+3;</span><br><span class="line">           $objPHPExcel-&gt;setActiveSheetIndex(0)-&gt;setCellValue($cellKey[$key].$number, $data[$k+2][$key]);//设置表头数据</span><br><span class="line">       &#125;</span><br><span class="line">  	&#125;</span><br><span class="line">  	 //下载文件</span><br><span class="line">    header(&apos;pragma:public&apos;);</span><br><span class="line">    header(&apos;Content-type:application/vnd.ms-excel;charset=utf-8;name=&quot;&apos;.$xlsTitle.&apos;.xls&quot;&apos;);</span><br><span class="line">    header(&quot;Content-Disposition:attachment;filename=$fileName.xls&quot;);//attachment新窗口打印inline本窗口打印</span><br><span class="line">    $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, &apos;Excel5&apos;);</span><br><span class="line">    $objWriter-&gt;save(&apos;php://output&apos;);</span><br><span class="line">    exit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>导出示例图</p>
+<h3 id="导入相关"><a href="#导入相关" class="headerlink" title="导入相关"></a>导入相关</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/06/React脚手架项目搭建/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/06/React脚手架项目搭建/" itemprop="url">React脚手架项目搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-06T10:14:08+08:00">
+                2018-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/前端框架/" itemprop="url" rel="index">
+                    <span itemprop="name">前端框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="全局安装脚手架工具"><a href="#全局安装脚手架工具" class="headerlink" title="全局安装脚手架工具"></a>全局安装脚手架工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create-react-app react-cli</span><br><span class="line">下载完成后</span><br><span class="line">  cd react-cli</span><br><span class="line">  npm start</span><br></pre></td></tr></table></figure>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>当点击按钮时发生的点击事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">第一种方案可以通过构造方法的bind(this) 绑定 this</span><br><span class="line">construct(props) &#123;</span><br><span class="line">	super(props);</span><br><span class="line">	this.increateLikes = this.increateLikes.bind(this);</span><br><span class="line">&#125;</span><br><span class="line">&lt;button onClick=&#123;this.increateLikes&#125; &quot;&gt;点赞&lt;/button&gt;</span><br><span class="line">第二种的方案是直接用es6 的方法写</span><br><span class="line">&lt;button onClick=&#123;() =&gt;&#123;this.increateLikes()&#125;&#125;&gt;点赞&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="更新组件"><a href="#更新组件" class="headerlink" title="更新组件"></a>更新组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">increateLikes() &#123;</span><br><span class="line">  this.setState(&#123;</span><br><span class="line">  	likes: this.state.likes</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>时钟更新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line"></span><br><span class="line">class DigitalClock extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      date: new Date()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">   this.timer = setInterval(()=&gt; &#123;</span><br><span class="line">     this.setState(&#123;</span><br><span class="line">       date:new Date</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;,1000)</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    clearInterval(this.timer)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div className=&quot;digital-clock-component jumbotron&quot;&gt;</span><br><span class="line">        &lt;h1&gt;&#123;this.state.date.toLocaleTimeString()&#125;&lt;/h1&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default DigitalClock</span><br></pre></td></tr></table></figure></p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">阻止默认事件</span><br><span class="line">event.preventDefault()</span><br><span class="line"></span><br><span class="line">//非受控组件</span><br><span class="line">handSubmit(event) &#123;</span><br><span class="line">    alert(this.textInput.value)</span><br><span class="line">    event.preventDefault() //阻止默认事件</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">&lt;input type=&quot;text&quot; className=&quot;form-control&quot; </span><br><span class="line">        ref=&#123;(textInput) =&gt;&#123; this.textInput = textInput &#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>类似双向数据绑定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;form className=&quot;p-5&quot; onSubmit=&#123;this.handSubmit&#125;&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; className=&quot;form-control&quot; </span><br><span class="line">        ref=&#123;(textInput) =&gt;&#123; this.textInput = textInput &#125;&#125; /&gt;</span><br><span class="line">	&lt;button className=&quot;btn btn-primary&quot;&gt;留言&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;	</span><br><span class="line"></span><br><span class="line">handSubmit(event)&#123;</span><br><span class="line">this.props.onAddData(this.textInput.value)</span><br><span class="line">event.preventDefault()//阻止默认事件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当点击提交的时候调用 onAddData(event) 函数,然后在主页面绑定函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">construct(props)&#123;</span><br><span class="line">this.state = &#123;</span><br><span class="line">	comments:[&apos;信息&apos;]</span><br><span class="line">&#125;</span><br><span class="line">this.onAddData = this.onAddData.bind(this)</span><br><span class="line">&#125;</span><br><span class="line">addComment(comment) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      comments:[...this.state.comments,comment]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">... es6 函数方法 表示在旧的之后面追加新的值</span><br></pre></td></tr></table></figure></p>
+<h3 id="context"><a href="#context" class="headerlink" title="context"></a>context</h3><p>props 是由上到下的单向传递<br>Context 提供了在组件中共享此类值的方法</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/05/React初体验/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/05/React初体验/" itemprop="url">React初体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T09:16:27+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/前端框架/" itemprop="url" rel="index">
+                    <span itemprop="name">前端框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>React是一个JavaScript库,可以在浏览器运行，也可以在服务器运行,初次使用可以部署到本地测试，也可以直接使用<a href="https://codepen.io/anon/pen/VVYpJW?editors=1010" target="_blank" rel="noopener">codepen</a>;</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://github.com/facebook/react/" target="_blank" rel="noopener">官方git地址</a><br>1、拷贝库到本地</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:facebook/react.git</span><br></pre></td></tr></table></figure>
+<p>当然没有git可以直接下载压缩包解压到本地即可，关于git安装可以看看这篇：</p>
+<h3 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h3><p>React 独有的 JSX 语法，跟 JavaScript 不兼容。凡是使用 JSX 的地方，都要加上 type=”text/babel”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/babel&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="ReactDOM-render"><a href="#ReactDOM-render" class="headerlink" title="ReactDOM.render()"></a>ReactDOM.render()</h3><p>ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;demo&quot;&gt;&lt;/div&gt;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;h1&gt;你好，陌生人！&lt;/h1&gt;</span><br><span class="line">  document.getElementById(&apos;demo&apos;);</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h2 id="JSX-语法"><a href="#JSX-语法" class="headerlink" title="JSX 语法"></a>JSX 语法</h2><p>允许 HTML 与 JavaScript 的混写<br>遇到 HTML 标签（以 &lt; 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">var arr = [&apos;java&apos;,&apos;php&apos;,&apos;react&apos;];</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">	&#123;</span><br><span class="line">	  arr.map(function(value)&#123;</span><br><span class="line">	  	return &lt;div&gt;我喜欢&#123;value&#125;&lt;/div&gt;</span><br><span class="line">	  &#125;)</span><br><span class="line">	&#125;</span><br><span class="line">  &lt;/div&gt;,  //注意这儿有个逗号，每次分段都要有逗号分割</span><br><span class="line">  document.getElementById(&apos;root&apos;)   //注意这儿没有逗号</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">当直接使用数组变量时就会将所有的变量顺序展示</span><br><span class="line">&lt;div&gt;我喜欢&#123;arr&#125;&lt;/div&gt;</span><br><span class="line">--&gt;我喜欢,javaphpreact</span><br><span class="line">也可以使用表达式 例如</span><br><span class="line">var element = (</span><br><span class="line">&lt;div&gt;</span><br><span class="line">	&#123;</span><br><span class="line">	  arr.map(function(value)&#123;</span><br><span class="line">	  	return &lt;div&gt;我喜欢&#123;value&#125;&lt;/div&gt;</span><br><span class="line">	  &#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。React.createClass 方法就用于生成一个组件类<br>注意，组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错.</p>
+<p>使用JavaScript函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Demo(props) &#123;</span><br><span class="line">	return &lt;h1&gt;你好,&#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Demo name=&quot;zhang&quot;/&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>使用<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noopener">ES6 class</a>来定义一个组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Demo extends React.Component &#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Demo name=&quot;陌生人！&quot;/&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>写法上有个地方需要注意<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</span><br><span class="line">这个地方可以这样写</span><br><span class="line">return &lt;h1&gt;</span><br><span class="line">	Hello, &#123;this.props.name&#125;</span><br><span class="line">&lt;/h1&gt;;</span><br><span class="line">但不可以这样写</span><br><span class="line">return </span><br><span class="line">&lt;h1&gt;</span><br><span class="line">	Hello, &#123;this.props.name&#125;</span><br><span class="line">&lt;/h1&gt;;</span><br><span class="line">并且可以这样写</span><br><span class="line">return &lt;div&gt;</span><br><span class="line">	&lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;</span><br><span class="line">	&lt;p&gt;你的笑像一条恶犬，撞乱了我的心弦！&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;;</span><br><span class="line">但不可以这样写</span><br><span class="line">return &lt;div&gt;</span><br><span class="line">	&lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;p&gt;你的笑像一条恶犬，撞乱了我的心弦！&lt;/p&gt;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="组件组合"><a href="#组件组合" class="headerlink" title="组件组合"></a>组件组合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Welcome extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;button&gt;Hello, &#123;this.props.name&#125;&lt;/button&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Demo extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;div&gt;</span><br><span class="line">      &lt;Welcome name=&quot;I&quot; /&gt;,</span><br><span class="line">      &lt;Welcome name=&quot;Love&quot; /&gt;,</span><br><span class="line">      &lt;Welcome name=&quot;You&quot; /&gt;,</span><br><span class="line">      &lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Demo /&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>所有的React组件必须像纯函数那样使用它们的props</p>
+<h3 id="真实dom节点的获取"><a href="#真实dom节点的获取" class="headerlink" title="真实dom节点的获取"></a>真实dom节点的获取</h3><p>组件并不是真实的 DOM 节点，而是存在于内存之中的一种数据结构，叫做虚拟 DOM （virtual DOM）。只有当它插入文档以后，才会变成真实的 DOM 。根据 React 的设计，所有的 DOM 变动，都先在虚拟 DOM 上发生，然后再将实际发生变动的部分，反映在真实 DOM上，这种算法叫做 DOM diff ，它可以极大提高网页的性能表现。</p>
+<p>但是，有时需要从组件获取真实 DOM 的节点，这时就要用到 ref 属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var MyComponent = React.createClass(&#123;</span><br><span class="line">  handleClick: function() &#123;</span><br><span class="line">    this.refs.myTextInput.focus();</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; ref=&quot;myTextInput&quot; /&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; value=&quot;Focus the text input&quot; onClick=&#123;this.handleClick&#125; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;MyComponent /&gt;,</span><br><span class="line">  document.getElementById(&apos;example&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>React 的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 UI<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var LikeButton = React.createClass(&#123;</span><br><span class="line">  getInitialState: function() &#123;</span><br><span class="line">    return &#123;liked: false&#125;;</span><br><span class="line">  &#125;, //定义初始状态，也就是一个对象，这个对象可以通过 this.state 属性读取。</span><br><span class="line">  handleClick: function(event) &#123;</span><br><span class="line">    this.setState(&#123;liked: !this.state.liked&#125;);</span><br><span class="line">  &#125;, //当用户点击组件，导致状态变化，this.setState 方法就修改状态值，每次修改以后，自动调用 this.render 方法，再次渲染组件</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    var text = this.state.liked ? &apos;like&apos; : &apos;haven\&apos;t liked&apos;;</span><br><span class="line">    return (</span><br><span class="line">      &lt;p onClick=&#123;this.handleClick&#125;&gt;</span><br><span class="line">        You &#123;text&#125; this. Click to toggle.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;LikeButton /&gt;,</span><br><span class="line">  document.getElementById(&apos;example&apos;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。</span><br></pre></td></tr></table></figure></p>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>用户在表单填入的内容，属于用户跟组件的互动，所以不能用 this.props 读取<br>以下为非受控表单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props)&#123;</span><br><span class="line">  	super(props);</span><br><span class="line">  	this.state = &#123;name: &apos;&apos;,hobby: &apos;&apos;,introduce:&apos;&apos;,book: &apos;&apos;&#125;;</span><br><span class="line">  	this.handleChangeName = this.handleChangeName.bind(this);</span><br><span class="line">    this.handleChangeHobby = this.handleChangeHobby.bind(this);</span><br><span class="line">    this.handleChangeIntroduce = this.handleChangeIntroduce.bind(this);</span><br><span class="line">    this.handleChangeBook = this.handleChangeBook.bind(this);</span><br><span class="line">  	this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">  handleChangeName(event) &#123;</span><br><span class="line">  	this.setState(&#123;</span><br><span class="line">  		name:event.target.value</span><br><span class="line">  	&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  handleChangeHobby(event) &#123;</span><br><span class="line">	this.setState(&#123;</span><br><span class="line">		hobby:event.target.value</span><br><span class="line">	&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  handleChangeIntroduce(event) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      introduce: event.target.value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  handleChangeBook(event) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      book: event.target.value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">  console.log(this.state);</span><br><span class="line">  	event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">  	return (</span><br><span class="line">      &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">          姓名:</span><br><span class="line">          &lt;input type=&quot;text&quot; value=&#123;this.state.name&#125; onChange=&#123;this.handleChangeName&#125; /&gt;</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">          爱好:</span><br><span class="line">          &lt;input type=&quot;text&quot; value=&#123;this.state.hobby&#125; onChange=&#123;this.handleChangeHobby&#125; /&gt;</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">          个人简介:</span><br><span class="line">      	&lt;textarea value=&#123;this.state.introduce&#125; onChange=&#123;this.handleChangeIntroduce&#125; &gt;&lt;/textarea&gt;</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">          喜欢的书</span><br><span class="line">          &lt;select value=&#123;this.state.value&#125; onChange=&#123;this.handleChangeBook&#125;&gt;</span><br><span class="line">            &lt;option value=&quot;1&quot;&gt;Java&lt;/option&gt;</span><br><span class="line">            &lt;option value=&quot;2&quot;&gt;PHP&lt;/option&gt;</span><br><span class="line">            &lt;option value=&quot;3&quot;&gt;JavaScript&lt;/option&gt;</span><br><span class="line">            &lt;option value=&quot;4&quot;&gt;Css&lt;/option&gt;</span><br><span class="line">          &lt;/select&gt;</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;确定&quot; /&gt;</span><br><span class="line">      &lt;/form&gt;</span><br><span class="line">  	)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;NameForm /&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h3 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h3><p>由于非受控组件将真实数据保存在 DOM 中，因此在使用非受控组件时，更容易同时集成 React 和非 React 代码。如果你想快速而随性，这样做可以减小代码量。否则，你应该使用受控组件。</p>
+<p>拉个官网的栗子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class NameForm extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.handleSubmit = this.handleSubmit.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleSubmit(event) &#123;</span><br><span class="line">    alert(&apos;A name was submitted: &apos; + this.input.value);</span><br><span class="line">    event.preventDefault();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">          Name:</span><br><span class="line">          &lt;input type=&quot;text&quot; ref=&#123;(input) =&gt; this.input = input&#125; /&gt;</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">      &lt;/form&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h2><p>组件的<a href="https://reactjs.org/docs/refs-and-the-dom.html#component-lifecycle" target="_blank" rel="noopener">生命周期</a>分成三个状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mounting：已插入真实 DOM</span><br><span class="line">Updating：正在被重新渲染</span><br><span class="line">Unmounting：已移出真实 DOM</span><br></pre></td></tr></table></figure></p>
+<p>React 为每个状态都提供了两种处理函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用，三种状态共计五种处理函数。</p>
+<p>React 还提供两种特殊状态的处理函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用</span><br><span class="line">shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Welcome extends React.Component&#123;</span><br><span class="line">  constructor(props)&#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;opacity: 1.0&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    this.timer = setInterval(function () &#123;</span><br><span class="line">      var opacity = this.state.opacity;</span><br><span class="line">      opacity -= .05;</span><br><span class="line">      if (opacity &lt; 0.1) &#123;</span><br><span class="line">        opacity = 1.0;</span><br><span class="line">      &#125;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        opacity: opacity</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;.bind(this), 100);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div style=&#123;&#123;opacity: this.state.opacity&#125;&#125;&gt;</span><br><span class="line">        Hello &#123;this.props.name&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Welcome name=&quot;world&quot;/&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/03/layx初体验/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/03/layx初体验/" itemprop="url">layx初体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T11:47:25+08:00">
+                2018-11-03
               </time>
             
 
@@ -545,7 +1489,294 @@
       
         
           
-            <h2 id="多项表单-localStorage-存储"><a href="#多项表单-localStorage-存储" class="headerlink" title="多项表单 localStorage 存储"></a>多项表单 localStorage 存储</h2><h3 id="适用于多项输入如：radio-、text-、-number"><a href="#适用于多项输入如：radio-、text-、-number" class="headerlink" title="适用于多项输入如：radio 、text 、 number"></a>适用于多项输入如：radio 、text 、 number</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//页面初始加载判断缓存</span></span><br><span class="line">        <span class="keyword">var</span> lenth = localStorage.length;</span><br><span class="line">        <span class="keyword">if</span>(lenth !=<span class="string">''</span> &amp;&amp; lenth !=<span class="literal">undefined</span> &amp;&amp; lenth != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i= lenth - <span class="number">1</span> ; i &gt;<span class="number">0</span>; i--)&#123;</span><br><span class="line">                <span class="keyword">var</span> key =  localStorage.key(i);<span class="comment">//缓存的key</span></span><br><span class="line">                <span class="keyword">var</span> val = localStorage.getItem(key);<span class="comment">//缓存的值</span></span><br><span class="line">                <span class="keyword">var</span> name = key.substring(<span class="number">0</span>,key.length <span class="number">-2</span>);<span class="comment">//获得缓存位置的名称 </span></span><br><span class="line">                <span class="keyword">var</span> distinguish = key.substring(key.length <span class="number">-2</span>,key.length);</span><br><span class="line">			    <span class="comment">//取的识别字符</span></span><br><span class="line">                <span class="keyword">if</span>(distinguish === <span class="string">'4a'</span>)&#123;</span><br><span class="line">                    $(<span class="string">"input[type='radio']"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                       <span class="keyword">if</span>($(<span class="keyword">this</span>)[<span class="number">0</span>].name === name &amp;&amp; $(<span class="keyword">this</span>)[<span class="number">0</span>].value === val)&#123;</span><br><span class="line">                         $(<span class="keyword">this</span>).attr(<span class="string">'checked'</span>, <span class="literal">true</span>);</span><br><span class="line">                       &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                    $(<span class="string">"input[type='text']"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                       <span class="keyword">if</span>($(<span class="keyword">this</span>)[<span class="number">0</span>].name === name )&#123;</span><br><span class="line">                         $(<span class="keyword">this</span>).val(val)</span><br><span class="line">                       &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">//监听内容变化</span></span><br><span class="line">    $(<span class="string">"input[type='text']"</span>).bind(<span class="string">"input propertychange"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        localStorage.setItem(event.target.name+<span class="string">'4a'</span>, event.target.value);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"input[type='radio']"</span>).on(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">        localStorage.setItem(event.target.name+<span class="string">'4a'</span>, event.target.value);</span><br><span class="line">	   <span class="comment">//设置缓存 名字+识别字符</span></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+            <p>Layx 新一代Web弹窗组件，纯原生Javascript实现，不依赖任何第三方框架<br><a href="https://github.com/MonkSoul/Layx/" target="_blank" rel="noopener">git 地址：</a></p>
+<h3 id="初次使用"><a href="#初次使用" class="headerlink" title="初次使用"></a>初次使用</h3><p>第一步：引入 layx.css / layx.min.css</p>
+<p><link href="layx.min.css" rel="stylesheet" type="text/css"><br>第二步：引入 layx.js / layx.min.js</p>
+<p><script src="layx.min.js" type="text/javascript"></script><br>第三步：打开一个窗口试试<br>layx.html(‘str’,’字符串文本’,’Hello Layx!’);</p>
+<h3 id="消息提示"><a href="#消息提示" class="headerlink" title="消息提示"></a>消息提示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layx.msg(<span class="string">'2419 iaitao'</span>,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);<span class="comment">//成功提示</span></span><br></pre></td></tr></table></figure>
+<p>dialogIcon: 提示图标相关如下<br>success：成功图标<br>warn：警告图标<br>error：错误图标<br>help: 帮助图标</p>
+<h3 id="窗口皮肤"><a href="#窗口皮肤" class="headerlink" title="窗口皮肤"></a>窗口皮肤</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">layx.msg(</span><br><span class="line">		<span class="string">'2419 iaitao'</span>,</span><br><span class="line">		&#123;</span><br><span class="line">			dialogIcon:<span class="string">'success'</span>,</span><br><span class="line">			skin:<span class="string">'cloud'</span></span><br><span class="line">		&#125;);<span class="comment">//成功提示</span></span><br><span class="line">参数</span><br><span class="line"><span class="keyword">default</span>     <span class="comment">// 默认有边框</span></span><br><span class="line">cloud       <span class="comment">// 白色</span></span><br><span class="line">turquoise  <span class="comment">//青绿色</span></span><br><span class="line">river     <span class="comment">//蓝色</span></span><br><span class="line">asphalt  <span class="comment">// 沥青色</span></span><br></pre></td></tr></table></figure>
+<h3 id="提示窗口"><a href="#提示窗口" class="headerlink" title="提示窗口"></a>提示窗口</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">layx.alert(<span class="string">'操作提示'</span>,<span class="string">'2419 i aitao！'</span>);<span class="comment">//提示窗口</span></span><br><span class="line">layx.alert(<span class="string">'操作提示'</span>,<span class="string">'2419 i aitao！'</span>,<span class="literal">null</span>,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);<span class="comment">//提示窗口 添加提示图标</span></span><br></pre></td></tr></table></figure>
+<h3 id="打开网页"><a href="#打开网页" class="headerlink" title="打开网页"></a>打开网页</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layx.iframe(<span class="string">'localsite'</span>,<span class="string">'网页打开测试'</span>,<span class="string">'https://www.baidu.com'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="添加提示"><a href="#添加提示" class="headerlink" title="添加提示"></a>添加提示</h3><p>方向 ： top 、right、bottom、left<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"tip-right"</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	layx.tip(<span class="string">'只是测试哦.'</span>,<span class="built_in">document</span>.getElementById(<span class="string">'tip-right'</span>),<span class="string">'right'</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="询问窗口"><a href="#询问窗口" class="headerlink" title="询问窗口"></a>询问窗口</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">layx.confirm(<span class="string">'选择'</span>,<span class="string">'你会选择爱情而放弃事业吗？'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    layx.msg(<span class="string">'你的选择是正确的'</span>,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);<span class="comment">//成功提示</span></span><br><span class="line">    layx.destroy(id);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">带图标</span><br><span class="line">layx.confirm(<span class="string">'选择'</span>,<span class="string">'你会选择爱情而放弃事业吗？'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    layx.msg(<span class="string">'你的选择是正确的'</span>,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);<span class="comment">//成功提示</span></span><br><span class="line">    layx.destroy(id);</span><br><span class="line">&#125;,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);</span><br><span class="line"></span><br><span class="line">双向选择</span><br><span class="line">layx.confirm(<span class="string">'选择'</span>,<span class="string">'你会选择爱情而放弃事业吗？'</span>,<span class="literal">null</span>,&#123;</span><br><span class="line">    buttons:[</span><br><span class="line">        &#123;</span><br><span class="line">            label:<span class="string">'是的'</span>,</span><br><span class="line">            callback:<span class="function"><span class="keyword">function</span>(<span class="params">id, button, event</span>)</span>&#123;</span><br><span class="line">                layx.msg(<span class="string">'你的选择是正确的,爱情价更高！'</span>,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);<span class="comment">//成功提示</span></span><br><span class="line">                layx.destroy(id);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            label:<span class="string">'不会'</span>,</span><br><span class="line">            callback:<span class="function"><span class="keyword">function</span>(<span class="params">id, button, event</span>)</span>&#123;</span><br><span class="line">                layx.msg(<span class="string">'你的选择是正确的,爱情不能盲目！'</span>,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);<span class="comment">//成功提示</span></span><br><span class="line">                layx.destroy(id);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;,&#123;<span class="attr">dialogIcon</span>:<span class="string">'success'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="加载等待"><a href="#加载等待" class="headerlink" title="加载等待"></a>加载等待</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">layx.load(<span class="string">'loadId'</span>,<span class="string">'数据正在加载中，请稍后'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5 秒后自动关闭</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    layx.destroy(<span class="string">'loadId'</span>);</span><br><span class="line">&#125;,<span class="number">5000</span>);</span><br><span class="line"></span><br><span class="line">倒计时窗口</span><br><span class="line">layx.iframe(<span class="string">'settimeout'</span>,<span class="string">'打开一个倒计时关闭窗口'</span>,<span class="string">'https://www.baidu.com'</span>,&#123;</span><br><span class="line">    autodestroy:<span class="number">5000</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="打开窗口和窗口组"><a href="#打开窗口和窗口组" class="headerlink" title="打开窗口和窗口组"></a>打开窗口和窗口组</h3><p>初始化 窗口宽度：800 高度：600 minWidth：200  minHeight：200，宽度高度支持百分比显示，窗口位置 默认正中间</p>
+<h4 id="窗口组"><a href="#窗口组" class="headerlink" title="窗口组"></a>窗口组</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">layx.group(<span class="string">'group'</span>,[</span><br><span class="line">    &#123;</span><br><span class="line">        id:<span class="string">'group1'</span>,</span><br><span class="line">        title:<span class="string">'文本窗口'</span>,</span><br><span class="line">        content:<span class="string">'Layx 新一代Web弹窗组件.'</span>,</span><br><span class="line">        bgColor:<span class="string">'#ccc'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:<span class="string">'group2'</span>,</span><br><span class="line">        title:<span class="string">'网页窗口'</span>,</span><br><span class="line">        type:<span class="string">'url'</span>,</span><br><span class="line">        url:<span class="string">'./iframe.html'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id:<span class="string">'taobao'</span>,</span><br><span class="line">        title:<span class="string">'百度官网'</span>,</span><br><span class="line">        type:<span class="string">'url'</span>,</span><br><span class="line">        url:<span class="string">'https://www.baidu.com'</span></span><br><span class="line">    &#125;</span><br><span class="line">],<span class="number">0</span>,</span><br><span class="line">&#123;</span><br><span class="line">	width:<span class="number">600</span>,</span><br><span class="line">	skin:<span class="string">'cloud'</span>,</span><br><span class="line">	mergeTitle:<span class="literal">false</span>,</span><br><span class="line">    title:<span class="string">'你好呀，我是标题~'</span></span><br><span class="line">&#125;));</span><br><span class="line"><span class="number">0</span> 表示默认显示第一个窗口 下标从<span class="number">0</span>开始</span><br><span class="line">bgColor 表示页面背景颜色</span><br><span class="line">如果需要显示标题就添加下面两个参数，不需要就不用加</span><br><span class="line">	mergeTitle:<span class="literal">false</span>,</span><br><span class="line">	title:<span class="string">'你好呀，我是标题~'</span></span><br></pre></td></tr></table></figure>
+<h4 id="遮罩窗口"><a href="#遮罩窗口" class="headerlink" title="遮罩窗口"></a>遮罩窗口</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">layx.iframe(<span class="string">'shadow'</span>,<span class="string">'打开一个遮罩、阻隔窗口，点击窗口外试试'</span>,<span class="string">'http://www.baidu.com'</span>,&#123;</span><br><span class="line">    shadable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line">shadable 透明度 取值<span class="number">0</span>~<span class="number">1</span> 浮点值 透明度依次递减</span><br><span class="line"></span><br><span class="line">点击空白地方关闭</span><br><span class="line">layx.iframe(<span class="string">'shadow-click'</span>,<span class="string">'点击阻隔空白地方关闭窗口'</span>,<span class="string">'http://www.baidu.com'</span>,&#123;</span><br><span class="line">    shadable:<span class="number">0.2</span>,	</span><br><span class="line">    control:<span class="literal">true</span>,</span><br><span class="line">    border:<span class="literal">false</span>,</span><br><span class="line">    shadow:<span class="literal">false</span>,</span><br><span class="line">    shadeDestroy:<span class="literal">true</span>   <span class="comment">// 点击空白地方关闭</span></span><br><span class="line">&#125;);</span><br><span class="line">control 设置 <span class="literal">false</span> 将不显示控制标题栏，同时窗口拖动功能失效，需手动调用关闭方法关闭窗口。</span><br><span class="line">border:<span class="literal">false</span> 表示无边框</span><br></pre></td></tr></table></figure>
+<h3 id="自定义样式"><a href="#自定义样式" class="headerlink" title="自定义样式"></a>自定义样式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">layx.iframe(<span class="string">'radiu-style'</span>,<span class="string">'自定义外观，比如圆角'</span>,<span class="string">'./iframe.html'</span>,&#123;</span><br><span class="line">    style:layx.multiLine(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">/*</span></span><br><span class="line"><span class="comment">		icon:false,</span></span><br><span class="line"><span class="comment">        #layx-radiu-style&#123;</span></span><br><span class="line"><span class="comment">            border-radius:4px;</span></span><br><span class="line"><span class="comment">            -webkit-border-radius:4px;</span></span><br><span class="line"><span class="comment">            -moz-border-radius:4px;</span></span><br><span class="line"><span class="comment">            -ms-border-radius:4px;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        #layx-radiu-style .layx-window-icon&#123;</span></span><br><span class="line"><span class="comment">            color:#f00;</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span>&#125;)</span><br><span class="line">&#125;);</span><br><span class="line">icon 打开窗口的图标，可以去掉也可以自定义例如：</span><br><span class="line">icon:<span class="string">'&lt;img src="http://img.zcool.cn/community/019c2958a2b760a801219c77a9d27f.jpg" style="height:22px;display:block;" /&gt;'</span>,</span><br></pre></td></tr></table></figure>
+<h3 id="关闭窗口"><a href="#关闭窗口" class="headerlink" title="关闭窗口"></a>关闭窗口</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parent.layx.destroy(id);   <span class="comment">// 方法一（推荐）</span></span><br><span class="line">top.layx.destroy(id);   <span class="comment">// 方法二</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/02/thinkphp标签循环嵌套/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/02/thinkphp标签循环嵌套/" itemprop="url">thinkphp标签循环嵌套</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T15:35:39+08:00">
+                2018-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="thinkphp-volist-多重循环嵌套key"><a href="#thinkphp-volist-多重循环嵌套key" class="headerlink" title="thinkphp volist 多重循环嵌套key"></a>thinkphp volist 多重循环嵌套key</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/02/Jquery对input的一些操作/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/02/Jquery对input的一些操作/" itemprop="url">Jquery对input的一些操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T11:10:33+08:00">
+                2018-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>场景：对于选中，选择的一些操作，比如：勾选导出，获得全部选中的值等等</p>
+<h3 id="获得全部选中的值"><a href="#获得全部选中的值" class="headerlink" title="获得全部选中的值"></a>获得全部选中的值</h3><p>html 部分代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"checkbox"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"ids[]"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    ......</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>javascript 代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAllValue</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> ids = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">		i = <span class="number">0</span>;</span><br><span class="line">	$(<span class="string">"input[name^='ids']:checked"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//找到所有被选中的值</span></span><br><span class="line">		<span class="keyword">var</span> val = $(<span class="keyword">this</span>).val();</span><br><span class="line">		ids[i] = val;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">var</span> len = ids.length;</span><br><span class="line">	<span class="keyword">if</span>(len === <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ids;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="勾选多项进行操作"><a href="#勾选多项进行操作" class="headerlink" title="勾选多项进行操作"></a>勾选多项进行操作</h3><p>$.getJSON 简介：JSON（JavaScript Object Notation）即JavaScript对象表示法，是一种轻量级的数据交换格式。它非常便于编程人员对数据的处理，也便于机器对数据的解析和生成，应用非常广泛。json文件可以保存为“test.json”这样的文件，json数据的一般格式如下（“{ }”中的为对象，“[ ]”中的为数组)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">operate</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> url = $(<span class="keyword">this</span>).attr(<span class="string">'url'</span>);<span class="comment">//获得操作使用的url地址</span></span><br><span class="line">	<span class="keyword">var</span> ids = getAllValue();<span class="comment">//调用上列使用的方法</span></span><br><span class="line">	<span class="keyword">if</span>(!ids)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	$.getJSON(url,&#123;<span class="string">'t'</span>:<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">		<span class="comment">//发送get请求 返回结构比如：['status'=&gt;1|0,'data'=&gt;[],'msg'=&gt;'ok']</span></span><br><span class="line">		<span class="keyword">if</span>(d.status&gt;<span class="number">0</span>)&#123;</span><br><span class="line">			alert(d.msg);<span class="comment">//成功信息</span></span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			alert(d.msg);<span class="comment">//失败信息</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="反选操作"><a href="#反选操作" class="headerlink" title="反选操作"></a>反选操作</h3><p>html 示例<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  	  <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">  	  	<span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">  	  	   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"ids[]"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">  	  	   <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  	  	<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  	  <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  	......</span><br><span class="line">  <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>JavaScript 示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.reverse-select'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//反选 class="reverse-select"</span></span><br><span class="line">	<span class="keyword">var</span> is_check = $(<span class="keyword">this</span>).prop(<span class="string">'checked'</span>);</span><br><span class="line">	$(<span class="keyword">this</span>).parents(<span class="string">'table'</span>).find(<span class="string">"input[name^='ids']"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//查找节点遍历 也可使用 $("table input[name^='ids']").each();</span></span><br><span class="line">		<span class="keyword">var</span> has_check = $(<span class="keyword">this</span>).prop(<span class="string">'checked'</span>);</span><br><span class="line">		<span class="keyword">if</span>(is_check &amp;&amp; !has_check)&#123;</span><br><span class="line">			$(<span class="keyword">this</span>).prop(<span class="string">'checked'</span>,<span class="literal">true</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(has_check &amp;&amp; !is_check)&#123;</span><br><span class="line">				$(<span class="keyword">this</span>).prop(<span class="string">'checked'</span>,<span class="literal">false</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -588,7 +1819,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/aitao/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/aitao/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/aitao/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/aitao/">1</a><span class="page-number current">2</span><a class="page-number" href="/aitao/page/3/">3</a><a class="extend next" rel="next" href="/aitao/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -642,7 +1873,7 @@
               
                 <a href="/aitao/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -653,7 +1884,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/aitao/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -664,7 +1895,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/aitao/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -743,7 +1974,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 <div class="powered-by">
 <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">

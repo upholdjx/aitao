@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="iaitao">
 <meta property="og:description" content="PHP 是 “PHP Hypertext Preprocessor” 的首字母缩略词PHP 是一种被广泛使用的开源脚本语言PHP 脚本在服务器上执行PHP 没有成本，可供免费下载和使用 PHP 相关主流框架：thinkphp5.0 看云文档  laravel 中文社区  Phalcon   Symfony 排列不分先后。  本文对框架不做讨论  常用字符串函数及使用字符串大小写转换12345$st">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T03:09:45.234Z">
+<meta property="og:updated_time" content="2018-11-14T08:53:32.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP常用字符串总结">
 <meta name="twitter:description" content="PHP 是 “PHP Hypertext Preprocessor” 的首字母缩略词PHP 是一种被广泛使用的开源脚本语言PHP 脚本在服务器上执行PHP 没有成本，可供免费下载和使用 PHP 相关主流框架：thinkphp5.0 看云文档  laravel 中文社区  Phalcon   Symfony 排列不分先后。  本文对框架不做讨论  常用字符串函数及使用字符串大小写转换12345$st">
@@ -100,7 +100,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/aitao/',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -393,8 +393,12 @@
 <p>本文对框架不做讨论</p>
 </blockquote>
 <h2 id="常用字符串函数及使用"><a href="#常用字符串函数及使用" class="headerlink" title="常用字符串函数及使用"></a>常用字符串函数及使用</h2><h3 id="字符串大小写转换"><a href="#字符串大小写转换" class="headerlink" title="字符串大小写转换"></a>字符串大小写转换</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">'abc'</span>;</span><br><span class="line">$low_str = strtolower($str);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'转换为小写'</span>+$low_str;</span><br><span class="line">$uper_str = strtoupper($str);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'转换为大写'</span>+$uper_str;</span><br></pre></td></tr></table></figure>
-<h3 id="替换字符串中的字串"><a href="#替换字符串中的字串" class="headerlink" title="替换字符串中的字串"></a>替换字符串中的字串</h3><p>mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixed $length ] )<br>substr_replace()<br>在字符串 string 的副本中将由 start 和可选的 length 参数限定的子字符串使用 replacement 进行替换。<br>注：<br>    如果 start 为正数，替换将从 string 的 start 位置开始。<br>    如果 start 为负数，替换将从 string 的倒数第 start 个位置开始。</p>
+<h3 id="替换字符串中的字串"><a href="#替换字符串中的字串" class="headerlink" title="替换字符串中的字串"></a>替换字符串中的字串</h3><p>1.mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixed $length ] )<br>substr_replace()<br>在字符串 string 的副本中将由 start 和可选的 length 参数限定的子字符串使用 replacement 进行替换。<br>注：<br>    如果 start 为正数，替换将从 string 的 start 位置开始。<br>    如果 start 为负数，替换将从 string 的倒数第 start 个位置开始。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实列：</span><br><span class="line">$str = <span class="string">'abc'</span>;</span><br><span class="line">$new_str = substr_replace($str,<span class="string">'d'</span>,<span class="number">0</span>,$strlen($str));<span class="comment">//strlen() 函数计算字符串的长度</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'新的字串的值'</span>+$new_str;<span class="comment">//abcd</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>strtr()<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> strtr(<span class="string">"Hilla Warld"</span>,<span class="string">"ia"</span>,<span class="string">"eo"</span>);</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <p>More info: <a href="http://php.net/manual/zh/ref.strings.php" target="_blank" rel="noopener">php 文档</a></p>
 <h3 id="字符串与数组之间的相互转化"><a href="#字符串与数组之间的相互转化" class="headerlink" title="字符串与数组之间的相互转化"></a>字符串与数组之间的相互转化</h3><p>array explode ( string $delimiter , string $string [, int $limit ] )<br>此函数返回由字符串组成的数组，每个元素都是 string 的一个子串，它们被字符串 delimiter 作为边界点分割出来。<br>string implode ( string $glue , array $pieces ) //$glue 默认为空字符串<br>string implode ( array $pieces )<br>implode() 可以接收两种参数顺序，但是 explode() 不行。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">实例：</span><br><span class="line">$str = <span class="string">'a,b,c,d'</span>;<span class="comment">//逗号为分隔字符 相当于 $delimiter ='';</span></span><br><span class="line">$arr = explode(<span class="string">','</span>,$str);</span><br><span class="line">dump($arr);</span><br><span class="line">得到：</span><br><span class="line"><span class="keyword">array</span>(<span class="number">4</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>] =&gt; string(<span class="number">1</span>) <span class="string">"a"</span></span><br><span class="line">  [<span class="number">1</span>] =&gt; string(<span class="number">1</span>) <span class="string">"b"</span></span><br><span class="line">  [<span class="number">2</span>] =&gt; string(<span class="number">1</span>) <span class="string">"c"</span></span><br><span class="line">  [<span class="number">3</span>] =&gt; string(<span class="number">1</span>) <span class="string">"d"</span></span><br><span class="line">&#125;</span><br><span class="line">$new_str = implode($arr);</span><br><span class="line"><span class="keyword">echo</span> $new_str;<span class="comment">//abcd</span></span><br></pre></td></tr></table></figure>
@@ -549,7 +553,7 @@
               
                 <a href="/aitao/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -560,7 +564,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/aitao/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -571,7 +575,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/aitao/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -666,7 +670,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 <div class="powered-by">
 <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">

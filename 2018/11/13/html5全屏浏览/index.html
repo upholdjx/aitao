@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="iaitao">
 <meta property="og:description" content="不多解释h5的特性12&amp;lt;div onclick=&amp;quot;enterFullScreen();&amp;quot; id=&amp;quot;entry_screen&amp;quot;&amp;gt;全屏显示&amp;lt;/div&amp;gt;&amp;lt;div onclick=&amp;quot;enterFullScreen();&amp;quot; id=&amp;quot;exit_screen&amp;quot;&amp;gt;退出全屏显示&amp;lt;/div&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-13T09:53:15.009Z">
+<meta property="og:updated_time" content="2018-11-13T10:04:03.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5全屏浏览">
 <meta name="twitter:description" content="不多解释h5的特性12&amp;lt;div onclick=&amp;quot;enterFullScreen();&amp;quot; id=&amp;quot;entry_screen&amp;quot;&amp;gt;全屏显示&amp;lt;/div&amp;gt;&amp;lt;div onclick=&amp;quot;enterFullScreen();&amp;quot; id=&amp;quot;exit_screen&amp;quot;&amp;gt;退出全屏显示&amp;lt;/div&amp;gt;">
@@ -100,7 +100,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/aitao/',
-    scheme: 'Gemini',
+    scheme: 'Pisces',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -389,6 +389,8 @@
       
         <p>不多解释h5的特性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;entry_screen&quot;&gt;全屏显示&lt;/div&gt;</span><br><span class="line">&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;exit_screen&quot;&gt;退出全屏显示&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//进入全屏</span><br><span class="line">function enterFullScreen() &#123;</span><br><span class="line">    var de = document.documentElement;</span><br><span class="line">    if (de.requestFullscreen) &#123;</span><br><span class="line">        de.requestFullscreen();</span><br><span class="line">    &#125; else if (de.mozRequestFullScreen) &#123;</span><br><span class="line">        de.mozRequestFullScreen();</span><br><span class="line">    &#125; else if (de.webkitRequestFullScreen) &#123;</span><br><span class="line">        de.webkitRequestFullScreen();</span><br><span class="line">    &#125;</span><br><span class="line">    $(&quot;#exit_screen&quot;)[0].style.display = &apos;block&apos;;</span><br><span class="line">    $(&quot;#entry_screen&quot;)[0].style.display = &apos;none&apos;;</span><br><span class="line">&#125;</span><br><span class="line">//退出全屏</span><br><span class="line">function exitFullScreen() &#123;</span><br><span class="line">    var de = document;</span><br><span class="line">    if (de.exitFullscreen) &#123;</span><br><span class="line">        de.exitFullscreen();</span><br><span class="line">    &#125; else if (de.mozCancelFullScreen) &#123;</span><br><span class="line">        de.mozCancelFullScreen();</span><br><span class="line">    &#125; else if (de.webkitCancelFullScreen) &#123;</span><br><span class="line">        de.webkitCancelFullScreen();</span><br><span class="line">    &#125;</span><br><span class="line">    $(&quot;#exit_screen&quot;)[0].style.display = &apos;none&apos;;</span><br><span class="line">    $(&quot;#entry_screen&quot;)[0].style.display = &apos;block&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.cnblogs.com/zichi/p/html5-file-api.html" target="_blank" rel="noopener">https://www.cnblogs.com/zichi/p/html5-file-api.html</a></p>
+
       
     </div>
     
@@ -438,6 +440,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/aitao/2018/11/14/HTML5-File-Api/" rel="prev" title="HTML5_File_Api">
+                HTML5_File_Api <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -529,7 +535,7 @@
               
                 <a href="/aitao/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -540,7 +546,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/aitao/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -551,7 +557,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/aitao/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -630,7 +636,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 <div class="powered-by">
 <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">

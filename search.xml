@@ -1,9 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2Fstudy%2F</url>
+    <content type="text"><![CDATA[gulp 前端构建工具小程序 不存在跨域使用pass 服务wafer 会话服务]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Webpack学习初体验]]></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16Webpack%E5%AD%A6%E4%B9%A0%E5%88%9D%E4%BD%93%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[webpack 用于编译 JavaScript 模块。一旦完成安装，你就可以通过 webpack 的 CLI 或 API 与其配合交互中文文档地址 安装node1.安装node npm 更新1npm install npm@latest -g npm 清除缓存1npm cache clean -f 开始webpack1.安装12npm install -g webpack --全局安装npm install --save-dev webpack --安装到目录 2.npm 5 以上如果在命令行使用需要安装webpackcli1npm install --save-dev webpack-cli 3.资源加载 加载css123456789安装并添加 style-loader 和 css-loader并加载npm install --save-dev style-loader css-loader &#123; test: /\.css$/, use: [ &apos;style-loader&apos;, &apos;css-loader&apos; ]&#125; 加载图片使用 file-loader，我们可以轻松地将这些内容混合到 CSS 中1npm install --save-dev file-loader 4.webpack 配置1234567module.exports = &#123; entry: __dirname './src/index.js', //入口文件 output: &#123; filename: 'bundle.js', path: path.resolve(__dirname, 'dist') &#125;,&#125;]]></content>
+      <categories>
+        <category>前端资源模块化</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[原生JavaScript操作]]></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16%E5%8E%9F%E7%94%9FJavaScript%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[打开新的窗口 12345678910var open_win = document.getElementById(&apos;open_win&apos;); open_win.addEventListener(&apos;click&apos;,function(e)&#123; openwindow(&apos;https://upholdjx.github.io/aitao/&apos;,200,200); e.preventDefault(); // 避免导航到 &quot;#&quot;&#125;,false);function openwindow(url, height, width) &#123; var t = (window.screen.availHeight - 400) / 2; var l = (window.screen.availWidth - 600) / 2; window.open(url, &quot;Query&quot;, &quot;height=&quot; + height + &quot;, width=&quot; + width + &quot;, top=&quot; + t + &quot;,left=&quot; + l + &quot;,toolbar=no, menubar=no, scrollbars=yes, resizable=no&quot;);&#125; 弹出确认框12345678910var open_win = document.getElementById(&apos;open_win&apos;); open_win.addEventListener(&apos;click&apos;,function(e)&#123; var msg = &apos;你确定要打开此页面？&apos;; if(confirm(msg) === true) &#123;//确定 openwindow(&apos;https://upholdjx.github.io/aitao/&apos;,200,200); &#125;else &#123;//取消 window.location.reload();//刷新当前页面 --- 可选 &#125; e.preventDefault(); // 避免导航到 &quot;#&quot;&#125;,false); 关于页面刷新的几种方式 window.location.reload()window.history.go(0)document.execCommand(‘’Refresh’’)这三个方法是最快速的。其他的都有明显的浏览器滚动条的出现。 页面自动刷新1.head头部设置1&lt;meta http-equiv="refresh" content="20"&gt; 2.js 设置定时器1234function refresh() &#123; window.location.reload();&#125;setTimeout('myrefresh()',1000); //指定1秒刷新一次 页面跳转12345678&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5; url=https://upholdjx.github.io&quot; /&gt;&lt;a href=&quot;#main&quot;&gt;跳转&lt;/a&gt;&lt;button onclick=&quot;demoFunction();&quot;&gt;跳转&lt;/button&gt;&lt;a href=&quot;#main&quot; onclick=&quot;return demoFunction();&quot;&gt;跳转&lt;/a&gt;加return的原因是阻止默认事件的跳转如果不加页面在执行demoFunction()函数的同时也发生着href的跳转事件。]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常用CSS整合]]></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16%E5%B8%B8%E7%94%A8CSS%2F</url>
+    <content type="text"><![CDATA[1234567891011121314151617181920212223242526272829&lt;!-- 图片描述 --&gt;.img-desc &#123; color: #b9b9b9; text-align: center; font-size: 12px;&#125;&lt;!-- 更好看的分割线样式 --&gt;hr &#123; border: 0; border-bottom: 1px solid #ddd; margin-bottom: 25px; margin-top: 25px; box-shadow: 0 2px 0 rgba(229, 229, 229, 0.4);&#125;&lt;!-- 超链接 --&gt;a &#123; /* 腾讯的产品用户体验最好，腾讯系产品爱用的链接颜色 */ color: #3481cf;&#125;a:hover &#123; color: #00a4ff;&#125;&lt;!-- 文本处理 --&gt;/* 使得更显眼一点 */h1, h2, h3, h4, h5, h6, h7, b, strong &#123; text-shadow: 0 1px white; color: #000;&#125;]]></content>
+      <categories>
+        <category>前端资源模块化</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP函数]]></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16PHP%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[系统函数1.字符串函数strlen：获取字符串长度，字节长度 substr：字符串截取，获取字符串（按照字节进行截取） strchr：与substr相似，从指定位置截取一直到最后 strrchr（获取文件后缀名）：与strchr一样，只是从右边开始查找字符 strtolower：所有的字符都小写（针对英文字母） strtoupper：所有的字符都大写 strrev：字符串反转（只能反转英文：英文存储只有一个字节），按照字节进行反转 strpos：从字符串中找对应字符出现的位置（数字下标），从最左边开始找 strrpos：与strpos一样，只是从字符串的右边开始找 trim：去掉函数两边的字符，默认是空格 2.时间日期函数time：得到当前时间的时间戳（整型：从格林威治时间1970年1月1日0时0分0秒开始）秒数 date：时间序列化函数，将指定的时间戳转换成规定时间日期的显示格式（随意的字符串：有专业的格式符规定），如果没有指定时间戳，系统默认使用当前时间的时间戳 strtotime：时间日期格式的字符串转换成对应的时间戳（只要是正确的英语时间表达方式，都可以进行转换） microtime：微秒时间戳，根据不同的要求返回不同的结果 混合 microtime (布尔类型 )，可以返回一个浮点数的时间，也可以返回一个数组（时间戳和微秒数） 3.数学相关函数abs：绝对值 floor：向下取整 floor(3.2) 结果等于3 ceil：向上取整 round：四舍五入 rand：取得一个指定范围内的随机整数 mt_rand：取得一个指定范围内的随机整数（效率更高） 4.数组相关函数key：获取当前数组当前指针所指向的元素的下标 current：获取的当前指针指向元素的数值 next：获取下一个元素的值，并且将指针下移 prev：获取上一个元素的值，并且将指针上移 end ：将指针移到数组的最后一个元素，并返回最终指针位置的值 reset：将指针移到数组的第一个元素，返回最终指针位置的值 array_keys：获取一个数组的所有键名，返回一个索引数组 array_values：获取一个数组的所有值，返回一个索引数组 explode：爆炸，将一个字符串按照某个指定的规则（通常是特殊字符），将数组分成多个段，每一段都当做一个数组的元素，返回一个索引数组 implode：粘合，将一个数组内部的所有元素按照某个指定的规则（特殊字符），将所有的元素拼接成一个字符串 array_merge：合并，指的是将两个数组中的元素进行累计。如果后面的数组与前面的数组有下标（键名：关联）相同的，那么后面的元素的值会覆盖前面的；如果是索引的相同下标，会自动的修改下标叠加到前面的数组里 5.判断变量is_bool：判断是否是布尔类型 is_float：判断浮点型 is_integer：判断整型 is_object：判断对象 is_array：判断数组 is_string：判断字符串 is_resource：判断资源 is_scalar：scalar是标量的，判断是基本数据类型：整型，浮点型，布尔型和字符串型 is_null：是否为空 is_numeric：判断数字或者纯数字组成的字符串 gettype：获得数据类型 settype：改变数据类型 6.文件操作函数opendir(路径)：打开一个路径资源（将路径内部的所有数据读入到内存） readdir(路径资源)：从文件夹资源中读取当前资源指针所指向的文件的名字，指针会向下移动一位 closedir(资源)：释放对应的文件资源 scandir(路径)：读取一个路径内部的所有文件名，返回一个数组，数组的每一个元素都是文件名。 file_exists：判断一个文件是否存在（文件是广义：路径和文件） is_dir：判断一个指定路径是否存在（文件夹） is_file：判断一个指定路径是否是文件（文件） mkdir：创建一个路径，如果路径存在就会报错 rmdir：移除文件夹 file_get_contents：从一个指定的文件内读取数据内容。 file_put_contents：将指定的字符串写入到对应的文件 fopen：打开一个文件资源 fgetc：c代表character，一次读取一个字符 fgets：s代表string，代表可以读取多个字符，取决于指定的读取长度或者是否碰到换行（最多只能读取一行数据） 两个函数都是对当前资源指针进行操作，读取之后都会将指针下移 fread：获取指定长度的数据直到文件结束 fwrite：向文件资源指针所在的位置写入数据，写东西不会将当前位置已有的东西往后移，而是会覆盖 fseek：将指针指定到对应的位置 fclose：使用对应的文件资源 copy：复制 unlink：删除文件 rename：重命名文件 filemtime：m代表modify，文件最后被修改的时间 filesize：文件大小（字节） fileperms：文件权限（Linux下的八进制） 本文转载自：(https://www.jb51.net/article/104830.htm) 回调函数123456789101112131415161718192021222324252627282930313233function fun1() &#123; echo &quot;is function 1&quot;;&#125;function fun2($fun1) &#123; $fun1();&#125;fun2(&apos;fun1&apos;); // is function 1array_walk() 主要用于对某个数组的迭代，相当于 foreach；array_map() 主要是根据某个/某几个数组产生一个新的数组，常应用于递归效果！$arr = [ &apos;name&apos; =&gt;&apos;张&apos;, &apos;sex&apos;=&gt;&apos;男&apos;, &apos;age&apos;=&gt;&apos;2&apos;];$res = array_map(function($n)&#123; var_dump($n); &lt;!-- string(3) &quot;张&quot; string(3) &quot;男&quot; string(1) &quot;2&quot; --&gt;&#125;, $arr);$res2 = array_walk($arr, function($v,$k)&#123; var_dump($k.&apos;=&gt;&apos;.$v); &lt;!-- string(9) &quot;name=&gt;张&quot; string(8) &quot;sex=&gt;男&quot; string(6) &quot;age=&gt;2&quot; --&gt;&#125;);]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>ThinkPhp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ThinkPhp5知识点]]></title>
+    <url>%2Faitao%2F2018%2F11%2F16%2F2018-11-16ThinkPhp5%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[异常处理1.异常12345678910抛出异常throw new Exception(&quot;Value must be 1 or below&quot;);抛出捕获异常try &#123; checkNum(10);//创建 checkNum()函数。它检测数字是否大于 1。如果是，则抛出一个异常 echo &apos;If you see this, the number is 1 or below&apos;;&#125; //捕获异常catch (Exception $e) &#123; echo &apos;Message: &apos; . $e-&gt;getMessage();&#125; 2.自定义异常类123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117class MyHttpException extends Exception&#123; private $statusCode; /** * HttpException constructor. * @param int $statusCode * @param string $message * @param int $code * @param $exception */ public function __construct($statusCode, $message = '', $code = 0, $exception = null) &#123; parent::__construct($message, $code, $exception); $this-&gt;statusCode = $statusCode; $this-&gt;getStatusCode(); &#125; public function getStatusCode() &#123; return static::sendHttpStatus($this-&gt;statusCode,$this-&gt;message); &#125; /** * 发送HTTP响应状态码 * @param $code * @param string $error * @param array|null $data * @internal param null $message */ static function sendHttpStatus($code, $error = '', $data = null) &#123; static $_status = array( // Informational 1xx 100 =&gt; 'Continue', 101 =&gt; 'Switching Protocols', // Success 2xx 200 =&gt; 'OK', 201 =&gt; 'Created', 202 =&gt; 'Accepted', 203 =&gt; 'Non-Authoritative Information', 204 =&gt; 'No Content', 205 =&gt; 'Reset Content', 206 =&gt; 'Partial Content', // Redirection 3xx 300 =&gt; 'Multiple Choices', 301 =&gt; 'Moved Permanently', 302 =&gt; 'Found', // 1.1 303 =&gt; 'See Other', 304 =&gt; 'Not Modified', 305 =&gt; 'Use Proxy', // 306 is deprecated but reserved 307 =&gt; 'Temporary Redirect', // Client Error 4xx 400 =&gt; 'Bad Request', 401 =&gt; 'Unauthorized', 402 =&gt; 'Payment Required', 403 =&gt; 'Forbidden', 404 =&gt; 'Not Found', 405 =&gt; 'Method Not Allowed', 406 =&gt; 'Not Acceptable', 407 =&gt; 'Proxy Authentication Required', 408 =&gt; 'Request Timeout', 409 =&gt; 'Conflict', 410 =&gt; 'Gone', 411 =&gt; 'Length Required', 412 =&gt; 'Precondition Failed', 413 =&gt; 'Request Entity Too Large', 414 =&gt; 'Request-URI Too Long', 415 =&gt; 'Unsupported Media Type', 416 =&gt; 'Requested Range Not Satisfiable', 417 =&gt; 'Expectation Failed', 422 =&gt; 'Unprocessable Entity', // Server Error 5xx 500 =&gt; 'Internal Server Error', 501 =&gt; 'Not Implemented', 502 =&gt; 'Bad Gateway', 503 =&gt; 'Service Unavailable', 504 =&gt; 'Gateway Timeout', 505 =&gt; 'HTTP Version Not Supported', 509 =&gt; 'Bandwidth Limit Exceeded' ); if (isset($_status[$code])) &#123; header('HTTP/1.1 ' . $code . ' ' . $_status[$code]); header('Content-Type:application/json;charset=utf-8'); if ($code == 200) //2xx状态码 &#123; echo json_encode($data, JSON_UNESCAPED_UNICODE); &#125; else if ($code == 204) &#123; //无响应体 &#125; else &#123; if (empty($error)) &#123; $error = $_status[$code]; &#125; $statusData = [ 'code' =&gt;$code, 'code_msg' =&gt;$_status[$code], 'error_msg' =&gt;$error, ]; echo json_encode($statusData, JSON_UNESCAPED_UNICODE); &#125; &#125; exit(0); &#125;&#125;###返回格式###&#123;"code": 422,"code_msg": "Unprocessable Entity","error_msg": "用户名已存在"&#125;### 调用方法 ###在需要的地方直接抛出异常，当然首先需要引入 MyHttpException 类throw new MyHttpException(500, '插入失败');]]></content>
+      <categories>
+        <category>PHP框架</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>ThinkPhp5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[网站收藏]]></title>
+    <url>%2Faitao%2F2018%2F11%2F15%2F%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F%2F</url>
+    <content type="text"><![CDATA[1.教程、学习和网址]]></content>
+      <categories>
+        <category>网站收藏</category>
+      </categories>
+      <tags>
+        <tag>网站收藏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js判断当前URL的协议(http/https)]]></title>
+    <url>%2Faitao%2F2018%2F11%2F15%2Fjs%E5%88%A4%E6%96%AD%E5%BD%93%E5%89%8DURL%E7%9A%84%E5%8D%8F%E8%AE%AE-http-https%2F</url>
+    <content type="text"><![CDATA[判断当前URL的协议123var protocol_ = document.location.protocolconsole.log(protocol_);---&gt;返回当前的协议 http:或者 https: 获得当前域名1var domain_ = document.domain; 获取指定字符后面的所有值stringObject.substring(start,stop) start 必需。一个非负的整数，规定要提取的子串的第一个字符在 stringObject 中的位置。stop 可选。一个非负的整数，比要提取的子串的最后一个字符在 stringObject 中的位置多 1。如果省略该参数，那么返回的子串会一直到字符串的结尾。12345678function getCaption(obj,catp)&#123; var index=obj.lastIndexOf(catp); obj=obj.substring(index+1,obj.length); return obj;&#125;测试：var url = &apos;http://www.demo.com?id=1%name=cs&apos;;getCaption(url,&apos;\?&apos;); h5 向指定元素添加事件句柄 element.addEventListener(event, function, useCapture)更多的事件可以参考菜鸟HTML DOM 事件addEventListener() 是 W3C DOM 规范中提供的注册事件监听器的方法1.它允许给一个事件注册多个监听器。 特别是在使用AJAX库，JavaScript模块，或其他需要第三方库/插件的代码。2.它提供了一种更精细的手段控制 listener 的触发阶段。（即可以选择捕获或者冒泡）2.它对任何 DOM 元素都是有效的，而不仅仅只对 HTML 元素有效。更多的addEventListener()规范浏览MDNEventTarget.addEventListener()12345678&lt;!-- html --&gt;&lt;a href="/demo/index.html" id = "demo" class="btn"&gt;&lt;/a&gt;var demo_ = document.getElementById('demo');demo_.addEventListener('click',function(e) &#123; var path_name = e.target.pathname;//得到href 指定的地址 console.log(e.path);//可以查看到事件触发参数 e.preventDefault(); // 避免导航到 "#"&#125;,false)]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常用JS集合]]></title>
+    <url>%2Faitao%2F2018%2F11%2F14%2F%E5%B8%B8%E7%94%A8JS%E9%9B%86%E5%90%88%2F</url>
+    <content type="text"><![CDATA[文章转载地址 检测邮箱是否有效1&lt;input type=&quot;text&quot; name=&quot;email&quot; id=&quot;email&quot;&gt; —-javascript—-12345678910111213141516171819var email = document.getElementById('email');email.addEventListener('change',function(e)&#123; var data = e.target.value; if(ValidateEmail(data)) &#123; alert('有效的邮箱'); &#125;else &#123; alert('无效的邮箱'); &#125; e.preventDefault(); // 避免导航到 "#"&#125;,false);function ValidateEmail(str) &#123; var r = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,4&#125;$/; if (r.test(str)) &#123; return true; &#125; else &#123; return false; &#125;&#125; 检测手机号是否规范12345678910function ValidateTelPhone(str) &#123; var regu = /^[1][3,4,5,7,8][0-9]&#123;9&#125;$/; var re = new RegExp(regu); if (re.test(str)) &#123; return true; &#125; else &#123; return false; &#125;&#125; 页面跳转表单清空123456function aUrl(url) &#123; window.location.href = url;&#125;//跳转function rForm(formid) &#123; document.getElementById(formid).reset();&#125;//清空 全选 jquery实现12345678910111213141516171819function getSelected()&#123; var ids = new Array(), i=0; $("input[name^='ids']:checked").each(function()&#123; var val = $(this).val(); ids[i] = val; i++; &#125;); if(ids.length == 0)&#123; //选择所有的 i=0; $("input[name^='ids']").each(function()&#123; var val = $(this).val(); ids[i] = val; i++; &#125;); &#125; return ids;&#125; 原生js 12345678function checkAll(id, checkname) &#123; var obj = document.getElementById(id); if (obj.checked) &#123; $("input[name='" + checkname + "']").attr('checked', true) &#125; else &#123; $("input[name='" + checkname + "']").attr('checked', false) &#125;&#125; 窗口打开一个小窗口 12345678910var open_win = document.getElementById(&apos;open_win&apos;); open_win.addEventListener(&apos;click&apos;,function(e)&#123; openwindow(&apos;http://www.guou.njapld.com&apos;,200,200); e.preventDefault(); // 避免导航到 &quot;#&quot;&#125;,false);function openwindow(url, height, width) &#123; var t = (window.screen.availHeight - 400) / 2; var l = (window.screen.availWidth - 600) / 2; window.open(url, &quot;Query&quot;, &quot;height=&quot; + height + &quot;, width=&quot; + width + &quot;, top=&quot; + t + &quot;,left=&quot; + l + &quot;,toolbar=no, menubar=no, scrollbars=yes, resizable=no&quot;);&#125; 数字金额–转汉字金额123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172function atoc(numberValue) &#123; var numberValue = new String(Math.round(numberValue * 100)); // 数字金额 var chineseValue = &quot;&quot;; // 转换后的汉字金额 var String1 = &quot;零壹贰叁肆伍陆柒捌玖&quot;; // 汉字数字 var String2 = &quot;万仟佰拾亿仟佰拾万仟佰拾元角分&quot;; // 对应单位 var len = numberValue.length; // numberValue 的字符串长度 var Ch1; // 数字的汉语读法 var Ch2; // 数字位的汉字读法 var nZero = 0; // 用来计算连续的零值的个数 var String3; // 指定位置的数值 if (len &gt; 15) &#123; alert(&quot;超出计算范围&quot;); return &quot;&quot;; &#125; if (numberValue == 0) &#123; chineseValue = &quot;零元整&quot;; return chineseValue; &#125; String2 = String2.substr(String2.length - len, len); // 取出对应位数的STRING2的值 for (var i = 0; i &lt; len; i++) &#123; String3 = parseInt(numberValue.substr(i, 1), 10); // 取出需转换的某一位的值 if (i != (len - 3) &amp;&amp; i != (len - 7) &amp;&amp; i != (len - 11) &amp;&amp; i != (len - 15)) &#123; if (String3 == 0) &#123; Ch1 = &quot;&quot;; Ch2 = &quot;&quot;; nZero = nZero + 1; &#125; else if (String3 != 0 &amp;&amp; nZero != 0) &#123; Ch1 = &quot;零&quot; + String1.substr(String3, 1); Ch2 = String2.substr(i, 1); nZero = 0; &#125; else &#123; Ch1 = String1.substr(String3, 1); Ch2 = String2.substr(i, 1); nZero = 0; &#125; &#125; else &#123; // 该位是万亿，亿，万，元位等关键位 if (String3 != 0 &amp;&amp; nZero != 0) &#123; Ch1 = &quot;零&quot; + String1.substr(String3, 1); Ch2 = String2.substr(i, 1); nZero = 0; &#125; else if (String3 != 0 &amp;&amp; nZero == 0) &#123; Ch1 = String1.substr(String3, 1); Ch2 = String2.substr(i, 1); nZero = 0; &#125; else if (String3 == 0 &amp;&amp; nZero &gt;= 3) &#123; Ch1 = &quot;&quot;; Ch2 = &quot;&quot;; nZero = nZero + 1; &#125; else &#123; Ch1 = &quot;&quot;; Ch2 = String2.substr(i, 1); nZero = nZero + 1; &#125; if (i == (len - 11) || i == (len - 3)) &#123; // 如果该位是亿位或元位，则必须写上 Ch2 = String2.substr(i, 1); &#125; &#125; chineseValue = chineseValue + Ch1 + Ch2; &#125; if (String3 == 0) &#123; // 最后一位（分）为0时，加上“整” chineseValue = chineseValue + &quot;整&quot;; &#125; return chineseValue;&#125;console.log(atoc(110));|：壹佰壹拾元整]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JQuery插件--backstretch]]></title>
+    <url>%2Faitao%2F2018%2F11%2F14%2FJQuery%E6%8F%92%E4%BB%B6-backstretch%2F</url>
+    <content type="text"><![CDATA[Backstretch是一个jQuery插件，允许您将动态调整大小的背景图像添加到任何页面。图像将拉伸以适合页面，并随着窗口大小的变化自动调整大小。 下载地址： 建立在网页中包含jQuery库和Backstretch插件文件（最好在页面底部，在结束BODY标记之前）12&lt;script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"&gt;&lt;/script&gt;&lt;script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"&gt;&lt;/script&gt; 在页面上定义一个区域如：1&lt;div class="container"&gt;&lt;/div&gt; 123456789$(function()&#123; $(&quot;.container&quot;).css(&#123; opacity:0.6 &#125;);//设置透明度 $.backstretch([ &quot;a.jpg&quot;, &quot;b.jpg&quot;, ], &#123; duration: 3000, fade: 750 &#125;);&#125;); 图片切换的间隔时间duration 当给body设置的时候不用指定区域1234$.backstretch([ &quot;a.jpg&quot;, &quot;b.jpg&quot;, ], &#123; duration: 3000, fade: 750 &#125;);]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTML5_File_Api]]></title>
+    <url>%2Faitao%2F2018%2F11%2F14%2FHTML5-File-Api%2F</url>
+    <content type="text"><![CDATA[该规范提供了一种API，用于表示Web应用程序中的文件对象，以及以编程方式选择它们并访问它们的数据。这包括：一个FileList接口，表示来自底层系统的单独选择的文件的数组。当输入元素File Upload处于[HTML]状态时调用用于选择的用户界面。一个Blob接口，表示不可变的原始二进制数据，并允许Blob作为单独的对象访问对象内的字节范围Blob。一个File接口，包括有关文件的只读信息属性，例如其名称和文件的最后修改日期（在磁盘上）。甲FileReader接口，它提供的方法来读取一个File或一个Blob，和一个事件模型获得的结果的这些读取。用于二进制数据（如文件）的URL方案，以便可以在Web应用程序中引用它们。此外，该规范定义了在线程Web应用程序中用于同步读取文件的对象。更多请看FileAPI本文参考博客：HTML5 File API — 让前端操作文件变的可能–韩子迟（网名） FileList接口所有type属性(attribute)为file的 input 元素都有一个files属性(property),用来存储用户所选择的文件1&lt;input type="file" &gt; 123document.querySelector('input').onchange = function() &#123; console.log(this.files[0]);&#125; 如果你想让用户选择多个文件，只需在input元素上使用multiple属性：1&lt;input type="file" id="input" multiple onchange="handleFiles(this.files)"&gt; FileReaderFileReader 对象采用异步方式读取文件，可以为一系列事件指定回调函数。.onabort 方法：读取中断或调用 reader.abort() 方法时触发。.onerror 方法：读取出错时触发。.onload 方法：读取成功后触发。.onloadend 方法：读取完成后触发，不管是否成功。触发顺序排在 onload 或 onerror 后面。.onloadstart 方法：读取将要开始时触发。.onprogress 方法：读取过程中周期性触发。（可以用来获取文件读取的进度） 获取图片的base64编码 12&lt;input type='file' multiple id="fileItem" /&gt;&lt;textarea&gt;&lt;/textarea&gt; 12345678910111213141516171819202122document.querySelector('input').onchange = function() &#123; var reader = new FileReader(); reader.onload = function() &#123; var dataURL = reader.result; &#125;; reader.readAsDataURL(this.files[0]);&#125;;var ipt = document.querySelector('textarea');ipt.ondragover = function () &#123; return false; &#125;;// Add drop handleript.ondrop = function(e) &#123; e.stopPropagation(); e.preventDefault(); e = e || window.event; var files = e.dataTransfer.files; var reader = new FileReader(); reader.onload = function() &#123; var dataURL = reader.result; document.querySelector('textarea').innerHTML = dataURL; &#125;; reader.readAsDataURL(files[0]);&#125;; 上传图片预览功能1234document.querySelector('input').onchange = function() &#123; var files = this.files; document.querySelector("img").src = window.URL.createObjectURL(files[0]);&#125;; 触发隐藏的inpt12&lt;input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)"&gt;&lt;a href="#" id="fileSelect"&gt;Select some files&lt;/a&gt; 123456789101112var fileSelect = document.getElementById("fileSelect"), fileElem = document.getElementById("fileElem");fileSelect.addEventListener("click", function (e) &#123; if (fileElem) &#123; fileElem.click(); &#125; e.preventDefault(); // 避免导航到 "#"&#125;, false);function handleFiles(argument) &#123; console.log(argument);&#125; js 页面打印 所需要打印的代码，用和 1234567891011121314151617function preview(oper)&#123; if (oper &lt; 10)&#123; bdhtml=window.document.body.innerHTML;//获取当前页的html代码 sprnstr=&quot;&lt;!--startprint&quot;+oper+&quot;--&gt;&quot;;//设置打印开始区域 eprnstr=&quot;&lt;!--endprint&quot;+oper+&quot;--&gt;&quot;;//设置打印结束区域 prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html window.document.body.innerHTML=prnhtml; window.print(); window.document.body.innerHTML=bdhtml; &#125; else &#123; window.print(); &#125;&#125;&lt;input type=button class=&quot;btn btn-sky shiny btn-sm&quot; title=&apos;打印1&apos; onclick=preview(1) value=打印1&gt;]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>html</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[html5全屏浏览]]></title>
     <url>%2Faitao%2F2018%2F11%2F13%2Fhtml5%E5%85%A8%E5%B1%8F%E6%B5%8F%E8%A7%88%2F</url>
-    <content type="text"><![CDATA[不多解释h5的特性12&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;entry_screen&quot;&gt;全屏显示&lt;/div&gt;&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;exit_screen&quot;&gt;退出全屏显示&lt;/div&gt; 1234567891011121314151617181920212223242526//进入全屏function enterFullScreen() &#123; var de = document.documentElement; if (de.requestFullscreen) &#123; de.requestFullscreen(); &#125; else if (de.mozRequestFullScreen) &#123; de.mozRequestFullScreen(); &#125; else if (de.webkitRequestFullScreen) &#123; de.webkitRequestFullScreen(); &#125; $(&quot;#exit_screen&quot;)[0].style.display = &apos;block&apos;; $(&quot;#entry_screen&quot;)[0].style.display = &apos;none&apos;;&#125;//退出全屏function exitFullScreen() &#123; var de = document; if (de.exitFullscreen) &#123; de.exitFullscreen(); &#125; else if (de.mozCancelFullScreen) &#123; de.mozCancelFullScreen(); &#125; else if (de.webkitCancelFullScreen) &#123; de.webkitCancelFullScreen(); &#125; $(&quot;#exit_screen&quot;)[0].style.display = &apos;none&apos;; $(&quot;#entry_screen&quot;)[0].style.display = &apos;block&apos;;&#125;]]></content>
+    <content type="text"><![CDATA[不多解释h5的特性12&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;entry_screen&quot;&gt;全屏显示&lt;/div&gt;&lt;div onclick=&quot;enterFullScreen();&quot; id=&quot;exit_screen&quot;&gt;退出全屏显示&lt;/div&gt; 1234567891011121314151617181920212223242526//进入全屏function enterFullScreen() &#123; var de = document.documentElement; if (de.requestFullscreen) &#123; de.requestFullscreen(); &#125; else if (de.mozRequestFullScreen) &#123; de.mozRequestFullScreen(); &#125; else if (de.webkitRequestFullScreen) &#123; de.webkitRequestFullScreen(); &#125; $(&quot;#exit_screen&quot;)[0].style.display = &apos;block&apos;; $(&quot;#entry_screen&quot;)[0].style.display = &apos;none&apos;;&#125;//退出全屏function exitFullScreen() &#123; var de = document; if (de.exitFullscreen) &#123; de.exitFullscreen(); &#125; else if (de.mozCancelFullScreen) &#123; de.mozCancelFullScreen(); &#125; else if (de.webkitCancelFullScreen) &#123; de.webkitCancelFullScreen(); &#125; $(&quot;#exit_screen&quot;)[0].style.display = &apos;none&apos;; $(&quot;#entry_screen&quot;)[0].style.display = &apos;block&apos;;&#125; https://www.cnblogs.com/zichi/p/html5-file-api.html]]></content>
       <categories>
         <category>HTML</category>
       </categories>
@@ -103,7 +227,7 @@
   <entry>
     <title><![CDATA[PHP常用字符串总结]]></title>
     <url>%2Faitao%2F2018%2F11%2F02%2FPHP%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[PHP 是 “PHP Hypertext Preprocessor” 的首字母缩略词PHP 是一种被广泛使用的开源脚本语言PHP 脚本在服务器上执行PHP 没有成本，可供免费下载和使用 PHP 相关主流框架：thinkphp5.0 看云文档 laravel 中文社区 Phalcon Symfony 排列不分先后。 本文对框架不做讨论 常用字符串函数及使用字符串大小写转换12345$str = 'abc';$low_str = strtolower($str);echo '转换为小写'+$low_str;$uper_str = strtoupper($str);echo '转换为大写'+$uper_str; 替换字符串中的字串mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixed $length ] )substr_replace()在字符串 string 的副本中将由 start 和可选的 length 参数限定的子字符串使用 replacement 进行替换。注： 如果 start 为正数，替换将从 string 的 start 位置开始。 如果 start 为负数，替换将从 string 的倒数第 start 个位置开始。 1234实列：$str = 'abc';$new_str = substr_replace($str,'d',0,$strlen($str));//strlen() 函数计算字符串的长度echo '新的字串的值'+$new_str;//abcd More info: php 文档 字符串与数组之间的相互转化array explode ( string $delimiter , string $string [, int $limit ] )此函数返回由字符串组成的数组，每个元素都是 string 的一个子串，它们被字符串 delimiter 作为边界点分割出来。string implode ( string $glue , array $pieces ) //$glue 默认为空字符串string implode ( array $pieces )implode() 可以接收两种参数顺序，但是 explode() 不行。 12345678910111213实例：$str = 'a,b,c,d';//逗号为分隔字符 相当于 $delimiter ='';$arr = explode(',',$str);dump($arr);得到：array(4) &#123; [0] =&gt; string(1) "a" [1] =&gt; string(1) "b" [2] =&gt; string(1) "c" [3] =&gt; string(1) "d"&#125;$new_str = implode($arr);echo $new_str;//abcd]]></content>
+    <content type="text"><![CDATA[PHP 是 “PHP Hypertext Preprocessor” 的首字母缩略词PHP 是一种被广泛使用的开源脚本语言PHP 脚本在服务器上执行PHP 没有成本，可供免费下载和使用 PHP 相关主流框架：thinkphp5.0 看云文档 laravel 中文社区 Phalcon Symfony 排列不分先后。 本文对框架不做讨论 常用字符串函数及使用字符串大小写转换12345$str = 'abc';$low_str = strtolower($str);echo '转换为小写'+$low_str;$uper_str = strtoupper($str);echo '转换为大写'+$uper_str; 替换字符串中的字串1.mixed substr_replace ( mixed $string , mixed $replacement , mixed $start [, mixed $length ] )substr_replace()在字符串 string 的副本中将由 start 和可选的 length 参数限定的子字符串使用 replacement 进行替换。注： 如果 start 为正数，替换将从 string 的 start 位置开始。 如果 start 为负数，替换将从 string 的倒数第 start 个位置开始。 1234实列：$str = 'abc';$new_str = substr_replace($str,'d',0,$strlen($str));//strlen() 函数计算字符串的长度echo '新的字串的值'+$new_str;//abcd strtr()12echo strtr("Hilla Warld","ia","eo");Hello World More info: php 文档 字符串与数组之间的相互转化array explode ( string $delimiter , string $string [, int $limit ] )此函数返回由字符串组成的数组，每个元素都是 string 的一个子串，它们被字符串 delimiter 作为边界点分割出来。string implode ( string $glue , array $pieces ) //$glue 默认为空字符串string implode ( array $pieces )implode() 可以接收两种参数顺序，但是 explode() 不行。 12345678910111213实例：$str = 'a,b,c,d';//逗号为分隔字符 相当于 $delimiter ='';$arr = explode(',',$str);dump($arr);得到：array(4) &#123; [0] =&gt; string(1) "a" [1] =&gt; string(1) "b" [2] =&gt; string(1) "c" [3] =&gt; string(1) "d"&#125;$new_str = implode($arr);echo $new_str;//abcd]]></content>
       <categories>
         <category>PHP</category>
       </categories>

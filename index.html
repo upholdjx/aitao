@@ -297,6 +297,678 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/28/前端开发总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/28/前端开发总结/" itemprop="url">前端开发总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T09:56:19+08:00">
+                2018-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/前端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">前端开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="map-定位"><a href="#map-定位" class="headerlink" title="map 定位"></a>map 定位</h3><p>shape 属性用于定义图像映射中对鼠标敏感的区域的形状：</p>
+<table>
+<thead>
+<tr>
+<th>shape</th>
+<th style="text-align:center">coords</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>圆形（circ 或 circle）</td>
+<td style="text-align:center">coords(x,y,z)</td>
+</tr>
+<tr>
+<td>多边形（poly 或 polygon）</td>
+<td style="text-align:center">coords=”x1,y1,x2,y2,x3,y3,…”</td>
+</tr>
+<tr>
+<td>矩形（rect 或 rectangle）</td>
+<td style="text-align:center">coords=”x1,y1,x2,y2”</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;img/2.png&quot; width=900 height=500 usemap=&quot;#map&quot; /&gt;</span><br><span class="line">&lt;map name=&quot;map&quot;&gt;</span><br><span class="line">    &lt;area shap=&quot;rect&quot; coords=&quot;0,0,50,50&quot; href=&quot;&quot; alt=&quot;1&quot;&gt;</span><br><span class="line">    &lt;area shap=&quot;circle&quot; coords=&quot;400,75,25&quot; href=&quot;&quot; alt=&quot;2&quot;&gt;</span><br><span class="line">&lt;/map&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;!-- 分区 --&gt;</span><br><span class="line">    &lt;fieldset&gt;</span><br><span class="line">        &lt;legend&gt;--标题或说明性标题--&lt;/legend&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">            &lt;input type=&quot;text/password/submit/hidden/button/etc&quot; name=&quot;&quot; value=&quot;&quot;&gt;</span><br><span class="line">            标签</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">        &lt;label for=&quot;sig&quot;&gt;标签2&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; id=&quot;sig&quot;&gt;</span><br><span class="line">        &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">        &lt;button type=&quot;reset&quot;&gt;Reset&lt;/button&gt;</span><br><span class="line">    &lt;/fieldset&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="1-规则语法"><a href="#1-规则语法" class="headerlink" title="1.@规则语法"></a>1.@规则语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;subs.css&quot;;</span><br><span class="line">@charset &quot;utf-8&quot;;</span><br><span class="line">@media print &#123;</span><br><span class="line">  /* property: value */</span><br><span class="line">&#125;</span><br><span class="line">@keyframes fadein &#123;</span><br><span class="line">  /* property: value */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-常用的规则"><a href="#2-常用的规则" class="headerlink" title="2.常用的规则"></a>2.常用的规则</h3><p>1.@media （用于响应式布局）<br>2.@keyframes （CSS 动画的中间步骤）<br>3.@font-face （引入外部字体）</p>
+<h3 id="3-常用伪类"><a href="#3-常用伪类" class="headerlink" title="3.常用伪类"></a>3.常用伪类</h3><blockquote>
+<p><em>:link IE6+
+</em>:visited IE7+<br><em>:hover IE6中仅可用于链接
+</em>:active IE6/7中仅可用于链接<br><em>:enabled IE9+
+</em>:disabled IE9+<br><em>:checked IE9+
+</em>:first-child IE8+<br><em>:last-child IE9+
+</em>:nth-child(even) 可为 odd even 或数字 IE9+<br><em>:nth-last-child(n) n从 0 开始计算 IE9+
+</em>:only-child 仅选择唯一的元素 IE9+<br><em>:only-of-type IE9+
+</em>:first-of-type IE9+<br><em>:last-of-type IE9+
+</em>:nth-of-type(even) IE9+<br>*:nth-last-of-type(2n) IE9+</p>
+</blockquote>
+<h3 id="4-组合选择"><a href="#4-组合选择" class="headerlink" title="4.组合选择"></a>4.组合选择</h3><blockquote>
+<p><em>后代选择器</em> .man h3<br><em>子选择器</em> .man&gt;h3<br><em>兄弟选择器</em> .man+h3<br><em>选择器分组</em> .man,h3 </p>
+</blockquote>
+<h3 id="4-文本操作"><a href="#4-文本操作" class="headerlink" title="4.文本操作"></a>4.文本操作</h3><ol>
+<li>居中  <blockquote>
+<p>text-align: start | end | left | right | center | justify | match-parent | start end</p>
+</blockquote>
+</li>
+<li>垂直对齐<blockquote>
+<p>vertical-align: baseline | sub | super | text-top | text-bottom | middle | top | bottom | <percentage> | <length></length></percentage></p>
+</blockquote>
+</li>
+<li>文本缩进<blockquote>
+<p>text-indent: <length> | <percentage> &amp;&amp; [ hanging || each-line ]</percentage></length></p>
+</blockquote>
+</li>
+<li>文字换行<blockquote>
+<p>word-wrap: normal | break-word</p>
+</blockquote>
+</li>
+<li><p>文字阴影</p>
+<blockquote>
+<p>text-shadow:none | <shadow-t># 或 text-shadow:none | [<length>{2,3}&amp;&amp;<color>?]#</color></length></shadow-t></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">  text-shadow: 1px 1px 1px #000,</span><br><span class="line">               3px 3px 5px blue;</span><br><span class="line">&#125;</span><br><span class="line">x-y-r color</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>省略字符</p>
+<blockquote>
+<p>text-overflow: [ clip | ellipsis | <string> ]{1,2}</string></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 常用配合 */</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">overflow: hidden; /* 溢出截取 */</span><br><span class="line">white-space: nowrap; /* 禁止换行 */</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>鼠标形状<br>cursor: [[<funciri>,]* [ auto | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize| text | wait | help ]] | inherit</funciri></p>
+<h3 id="5-盒子模型"><a href="#5-盒子模型" class="headerlink" title="5.盒子模型"></a>5.盒子模型</h3><p>1.盒子阴影 </p>
+<blockquote>
+<p>box-shadow: 4px  6px   3px  0px red;水平-垂直-半径-阴影大小-颜色</p>
+</blockquote>
+<h2 id="特殊字符集"><a href="#特殊字符集" class="headerlink" title="特殊字符集"></a>特殊字符集</h2><p><a href="https://www.cnblogs.com/xyyt/p/3515397.html" target="_blank" rel="noopener">详细信息–参考博文</a><br><a href="https://blog.csdn.net/u013778905/article/details/53177042" target="_blank" rel="noopener">图形补充–参考博文</a></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/27/CSV导出数据/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/27/CSV导出数据/" itemprop="url">CSV导出数据</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T11:20:17+08:00">
+                2018-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="导出封装"><a href="#导出封装" class="headerlink" title="导出封装"></a>导出封装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author 2419</span><br><span class="line"> * @DateTime    2018-10-09</span><br><span class="line"> * @description [使用csv 导出excel]</span><br><span class="line"> * @param       array      $head     [头部数据]</span><br><span class="line"> * @param       [type]     $data     [查询数据]</span><br><span class="line"> * @param       array      $row_data [展示的行内数据和头部对应]</span><br><span class="line"> * @param       string     $filename [文件名称]</span><br><span class="line"> * @return      [type]               [下载文件]</span><br><span class="line"> */</span><br><span class="line">public function putCsv(array $head, $data, $row_data =[], $filename = &quot;test.csv&quot;)</span><br><span class="line">&#123;</span><br><span class="line">    set_time_limit(0);</span><br><span class="line">    ini_set(&apos;default_charset&apos;, &apos;UTF-8&apos;);</span><br><span class="line">    $dbusername=config(&quot;database.username&quot;);</span><br><span class="line">    $dbpwd=config(&quot;database.password&quot;);</span><br><span class="line">    $dbhost=config(&quot;database.hostname&quot;);</span><br><span class="line">    $dbname=config(&quot;database.database&quot;);</span><br><span class="line">    $dsn = &quot;mysql:host=$dbhost;dbname=$dbname&quot;;</span><br><span class="line">    $dbh = new \PDO($dsn, $dbusername, $dbpwd);</span><br><span class="line">    $dbh-&gt;setAttribute(\PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, false);</span><br><span class="line">    $sth = $dbh-&gt;prepare($data);</span><br><span class="line">    $sth-&gt;execute();</span><br><span class="line">    $limit = 100000;</span><br><span class="line">    if (ob_get_level())&#123;</span><br><span class="line">        ob_end_clean();</span><br><span class="line">    &#125;</span><br><span class="line">    header(&quot;Content-Type: text/csv;charset=utf-8&quot;);</span><br><span class="line">    header(&quot;Content-Disposition:attachment;filename=&quot;.$filename);   </span><br><span class="line">    header(&quot;Pragma: no-cache&quot;);</span><br><span class="line">    header(&quot;Expires: 0&quot;);</span><br><span class="line">    $fp = fopen(&apos;php://output&apos;, &apos;w&apos;);</span><br><span class="line">    foreach ($head as $i =&gt; $v)&#123;</span><br><span class="line">        // CSV的Excel支持GBK编码，一定要转换，否则乱码</span><br><span class="line">        $head[$i] = iconv(&apos;utf-8&apos;, &apos;gb2312&apos;, $v);</span><br><span class="line">    &#125;</span><br><span class="line">    fputcsv($fp, $head);</span><br><span class="line">    $num = 0;</span><br><span class="line">    foreach($sth as $v)&#123;</span><br><span class="line">        $num++;</span><br><span class="line">        $row=[];</span><br><span class="line">        &lt;!-- 可对数据进行处理 --&gt;</span><br><span class="line">        if(!empty($v[&apos;end_time&apos;])) &#123;</span><br><span class="line">            $v[&apos;end_time&apos;] = date(&apos;Y-m&apos;,$v[&apos;end_time&apos;]);</span><br><span class="line">        &#125;</span><br><span class="line">        foreach ($row_data as $key =&gt; $value) &#123;</span><br><span class="line">            $row[] = $v[$value];</span><br><span class="line">        &#125;</span><br><span class="line">         //刷新一下输出buffer，防止由于数据过多造成问题</span><br><span class="line">        if ($num%$limit==0) &#123;</span><br><span class="line">            ob_flush();</span><br><span class="line">            flush();</span><br><span class="line">            $num = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        foreach ($row as $key =&gt; $val) &#123;</span><br><span class="line">            if (!empty($val)) &#123;</span><br><span class="line">                $val=is_numeric($val) ? $val . &quot;\t&quot; : $val;</span><br><span class="line">                $row[$key] = iconv(&apos;utf-8&apos;, &apos;gbk//IGNORE&apos;, $val);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        fputcsv($fp, $row);</span><br><span class="line">    &#125;</span><br><span class="line">    fclose($fp);</span><br><span class="line">    die;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$find = $model-&gt;db()-&gt;where($where)-&gt;alias(&apos;m&apos;);</span><br><span class="line">$head = [</span><br><span class="line">    &apos;姓名&apos;,&apos;身份证号&apos;,&apos;所属地区&apos;,&apos;添加时间&apos;</span><br><span class="line">];//头部信息</span><br><span class="line">$data = $find-&gt;fetchSql(true)-&gt;select();</span><br><span class="line">$row_data = [&apos;name&apos;,&apos;id_card&apos;,&apos;area_name&apos;,&apos;add_time&apos;];</span><br><span class="line">//需要打印的数据信息</span><br><span class="line">$filename = &apos;export_file_name.csv&apos;;//导出文件名</span><br><span class="line">$this-&gt;putCsv($head,$data,$row_data,$filename);</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/27/PHP毫秒级时间处理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/27/PHP毫秒级时间处理/" itemprop="url">PHP毫秒级时间处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-27T09:52:55+08:00">
+                2018-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><p>MySQL支持的整数类型的存储和范围<br>| 类型 | 占用存储空间 | 带符号最小值 | 无符号最小值 | 带符号最大值 | 无符号最大值 |<br>| ——–   | —–:  | :—-:  |<br>| TINYINT     | 1 | -128 | 0 | 127 | 255 |<br>| SMALLINT     | 2 | -32768 | 0 | 32767 | 65535 |<br>| MEDIUMINT     | 3 | -8388608 | 0 | 8388607 | 16777215 |<br>| INT     | 4 | -2147483648 | 0 | 2147483647 | 4294967295 |<br>| BIGINT     | 8 | -2^63 | 0 | 2^63-1 | 2^64-1 |<br>int 类型的最大宽度为 11 位，毫秒级的时间戳超过了11位，datetime 类型也只精确到秒级别<br>可以使用bigint</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@author</span> 2419</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@DateTime</span>    2018-11-26</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@description</span> [毫秒级时间戳处理 时间--时间戳]</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@param</span>       [type]     $time [description]</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@return</span>      [type]           [description]</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get_data_format</span><span class="params">($time)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">     <span class="keyword">list</span>($usec, $sec) = explode(<span class="string">"."</span>, $time);</span><br><span class="line">     $date = strtotime($usec);</span><br><span class="line">     $return_data = str_pad($date.$sec,<span class="number">13</span>,<span class="string">"0"</span>,STR_PAD_RIGHT); <span class="comment">//不足13位。右边补0</span></span><br><span class="line">     <span class="keyword">return</span> $return_data;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@author</span> 2419</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@DateTime</span>    2018-11-26</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@description</span> [毫秒级时间戳处理 时间戳--时间]</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@param</span>       [type]     $time [description]</span></span><br><span class="line"><span class="comment">  * <span class="doctag">@return</span>      [type]           [description]</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get_microtime_format</span><span class="params">($time)</span></span></span><br><span class="line"><span class="function"> </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span>(strstr($time,<span class="string">'.'</span>))&#123;</span><br><span class="line">        sprintf(<span class="string">"%01.3f"</span>,$time); <span class="comment">//小数点。不足三位补0</span></span><br><span class="line">        <span class="keyword">list</span>($usec, $sec) = explode(<span class="string">"."</span>,$time);</span><br><span class="line">        $sec = str_pad($sec,<span class="number">3</span>,<span class="string">"0"</span>,STR_PAD_RIGHT); <span class="comment">//不足3位。右边补0</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $usec = $time;</span><br><span class="line">        $sec = <span class="string">"000"</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    $date = date(<span class="string">"Y-m-d H:i:s.x"</span>,$usec);</span><br><span class="line">    <span class="keyword">return</span> str_replace(<span class="string">'x'</span>, $sec, $date);</span><br><span class="line"> &#125;</span><br><span class="line"> 转化为时间戳 </span><br><span class="line">$data1  = <span class="keyword">$this</span>-&gt;get_data_format(<span class="string">'2015-12-09 16:02:04.723'</span>);</span><br><span class="line">转化为时间</span><br><span class="line">$data  = <span class="keyword">$this</span>-&gt;get_microtime_format($data1*<span class="number">0.001</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h3><p>csv 导出的时候吞数据<br>2015-12-09 16:02:04.723 这种格式csv导出时成了这个 02:04.7<br>解决方法</p>
+<blockquote>
+<p>给后面追加 \t 记住 \t 一定是双引号包裹  “\t”</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/20/Vue整合/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jianxin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iaitao">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/aitao/2018/11/20/Vue整合/" itemprop="url">Vue整合</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-20T10:00:49+08:00">
+                2018-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/aitao/categories/前端框架/" itemprop="url" rel="index">
+                    <span itemprop="name">前端框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>初次使用可以直接使用cdn 节点引入js </p>
+<blockquote>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</blockquote>
+<h3 id="脚手架cli-安装"><a href="#脚手架cli-安装" class="headerlink" title="脚手架cli 安装"></a>脚手架cli 安装</h3><p>2.x 版本</p>
+<blockquote>
+<p>npm install -g vue-cli<br>3.x 版本<br>npm install -g @vue/cli<br>查看安装版本<br>vue –version<br>创建项目<br>vue create vue-app<br>安装完成贴换到安装目录<br>npm run serve</p>
+</blockquote>
+<h3 id="课外题"><a href="#课外题" class="headerlink" title="课外题"></a>课外题</h3><p>一些前端代码的优化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function calculateGrade(score) &#123;</span><br><span class="line">     if(score&gt;=90)&#123;</span><br><span class="line">        return &apos;A&apos;</span><br><span class="line">    &#125;else if(score &gt;= 80)&#123;</span><br><span class="line">        return &apos;B&apos;</span><br><span class="line">    &#125;else if(score &gt;= 70)&#123;</span><br><span class="line">        return &apos;C&apos;</span><br><span class="line">    &#125;else if(score &gt;= 60)&#123;</span><br><span class="line">        return &apos;D&apos;</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        return &apos;E&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">优化为</span><br><span class="line">function calculateGrade(score)&#123;</span><br><span class="line">    const table = &#123;</span><br><span class="line">        100: &apos;A&apos;, </span><br><span class="line">        90: &apos;A&apos;,</span><br><span class="line">        80: &apos;B&apos;,</span><br><span class="line">        70: &apos;C&apos;,</span><br><span class="line">        60: &apos;D&apos;,</span><br><span class="line">        others: &apos;E&apos;</span><br><span class="line">    &#125;</span><br><span class="line">    return table[Math.floor(score/10)*10] || table[&apos;others&apos;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://juejin.im/post/5bee62aae51d4560336ca8ef" target="_blank" rel="noopener">以上代码转载自方应杭在饥人谷</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+
+    
+
+    
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/19/常用CSS整合/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -749,7 +1421,10 @@
         
           
             <h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>1.异常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">抛出异常</span><br><span class="line">throw new Exception(&quot;Value must be 1 or below&quot;);</span><br><span class="line">抛出捕获异常</span><br><span class="line">try &#123;</span><br><span class="line">    checkNum(10);//创建 checkNum()函数。它检测数字是否大于 1。如果是，则抛出一个异常</span><br><span class="line">    echo &apos;If you see this, the number is 1 or below&apos;;</span><br><span class="line">&#125; //捕获异常</span><br><span class="line">catch (Exception $e) &#123;</span><br><span class="line">    echo &apos;Message: &apos; . $e-&gt;getMessage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2.自定义异常类<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHttpException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $statusCode;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * HttpException constructor.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> int $statusCode</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $message</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> int $code</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($statusCode, $message = <span class="string">''</span>, $code = <span class="number">0</span>, $exception = null)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::__construct($message, $code, $exception);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;statusCode = $statusCode;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;getStatusCode();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getStatusCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">static</span>::sendHttpStatus(<span class="keyword">$this</span>-&gt;statusCode,<span class="keyword">$this</span>-&gt;message);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 发送HTTP响应状态码</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $code</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $error</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> array|null $data</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@internal</span> param null $message</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">sendHttpStatus</span><span class="params">($code, $error = <span class="string">''</span>, $data = null)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> $_status = <span class="keyword">array</span>(</span><br><span class="line">            <span class="comment">// Informational 1xx</span></span><br><span class="line">            <span class="number">100</span> =&gt; <span class="string">'Continue'</span>,</span><br><span class="line">            <span class="number">101</span> =&gt; <span class="string">'Switching Protocols'</span>,</span><br><span class="line">            <span class="comment">// Success 2xx</span></span><br><span class="line">            <span class="number">200</span> =&gt; <span class="string">'OK'</span>,</span><br><span class="line">            <span class="number">201</span> =&gt; <span class="string">'Created'</span>,</span><br><span class="line">            <span class="number">202</span> =&gt; <span class="string">'Accepted'</span>,</span><br><span class="line">            <span class="number">203</span> =&gt; <span class="string">'Non-Authoritative Information'</span>,</span><br><span class="line">            <span class="number">204</span> =&gt; <span class="string">'No Content'</span>,</span><br><span class="line">            <span class="number">205</span> =&gt; <span class="string">'Reset Content'</span>,</span><br><span class="line">            <span class="number">206</span> =&gt; <span class="string">'Partial Content'</span>,</span><br><span class="line">            <span class="comment">// Redirection 3xx</span></span><br><span class="line">            <span class="number">300</span> =&gt; <span class="string">'Multiple Choices'</span>,</span><br><span class="line">            <span class="number">301</span> =&gt; <span class="string">'Moved Permanently'</span>,</span><br><span class="line">            <span class="number">302</span> =&gt; <span class="string">'Found'</span>,  <span class="comment">// 1.1</span></span><br><span class="line">            <span class="number">303</span> =&gt; <span class="string">'See Other'</span>,</span><br><span class="line">            <span class="number">304</span> =&gt; <span class="string">'Not Modified'</span>,</span><br><span class="line">            <span class="number">305</span> =&gt; <span class="string">'Use Proxy'</span>,</span><br><span class="line">            <span class="comment">// 306 is deprecated but reserved</span></span><br><span class="line">            <span class="number">307</span> =&gt; <span class="string">'Temporary Redirect'</span>,</span><br><span class="line">            <span class="comment">// Client Error 4xx</span></span><br><span class="line">            <span class="number">400</span> =&gt; <span class="string">'Bad Request'</span>,</span><br><span class="line">            <span class="number">401</span> =&gt; <span class="string">'Unauthorized'</span>,</span><br><span class="line">            <span class="number">402</span> =&gt; <span class="string">'Payment Required'</span>,</span><br><span class="line">            <span class="number">403</span> =&gt; <span class="string">'Forbidden'</span>,</span><br><span class="line">            <span class="number">404</span> =&gt; <span class="string">'Not Found'</span>,</span><br><span class="line">            <span class="number">405</span> =&gt; <span class="string">'Method Not Allowed'</span>,</span><br><span class="line">            <span class="number">406</span> =&gt; <span class="string">'Not Acceptable'</span>,</span><br><span class="line">            <span class="number">407</span> =&gt; <span class="string">'Proxy Authentication Required'</span>,</span><br><span class="line">            <span class="number">408</span> =&gt; <span class="string">'Request Timeout'</span>,</span><br><span class="line">            <span class="number">409</span> =&gt; <span class="string">'Conflict'</span>,</span><br><span class="line">            <span class="number">410</span> =&gt; <span class="string">'Gone'</span>,</span><br><span class="line">            <span class="number">411</span> =&gt; <span class="string">'Length Required'</span>,</span><br><span class="line">            <span class="number">412</span> =&gt; <span class="string">'Precondition Failed'</span>,</span><br><span class="line">            <span class="number">413</span> =&gt; <span class="string">'Request Entity Too Large'</span>,</span><br><span class="line">            <span class="number">414</span> =&gt; <span class="string">'Request-URI Too Long'</span>,</span><br><span class="line">            <span class="number">415</span> =&gt; <span class="string">'Unsupported Media Type'</span>,</span><br><span class="line">            <span class="number">416</span> =&gt; <span class="string">'Requested Range Not Satisfiable'</span>,</span><br><span class="line">            <span class="number">417</span> =&gt; <span class="string">'Expectation Failed'</span>,</span><br><span class="line">            <span class="number">422</span> =&gt; <span class="string">'Unprocessable Entity'</span>,</span><br><span class="line">            <span class="comment">// Server Error 5xx</span></span><br><span class="line">            <span class="number">500</span> =&gt; <span class="string">'Internal Server Error'</span>,</span><br><span class="line">            <span class="number">501</span> =&gt; <span class="string">'Not Implemented'</span>,</span><br><span class="line">            <span class="number">502</span> =&gt; <span class="string">'Bad Gateway'</span>,</span><br><span class="line">            <span class="number">503</span> =&gt; <span class="string">'Service Unavailable'</span>,</span><br><span class="line">            <span class="number">504</span> =&gt; <span class="string">'Gateway Timeout'</span>,</span><br><span class="line">            <span class="number">505</span> =&gt; <span class="string">'HTTP Version Not Supported'</span>,</span><br><span class="line">            <span class="number">509</span> =&gt; <span class="string">'Bandwidth Limit Exceeded'</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>($_status[$code]))</span><br><span class="line">        &#123;</span><br><span class="line">            header(<span class="string">'HTTP/1.1 '</span> . $code . <span class="string">' '</span> . $_status[$code]);</span><br><span class="line">            header(<span class="string">'Content-Type:application/json;charset=utf-8'</span>);</span><br><span class="line">            <span class="keyword">if</span> ($code == <span class="number">200</span>) <span class="comment">//2xx状态码</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">echo</span> json_encode($data, JSON_UNESCAPED_UNICODE);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ($code == <span class="number">204</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//无响应体</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">empty</span>($error))</span><br><span class="line">                &#123;</span><br><span class="line">                    $error = $_status[$code];</span><br><span class="line">                &#125;</span><br><span class="line">                $statusData = [</span><br><span class="line">                    <span class="string">'code'</span> =&gt;$code,</span><br><span class="line">                    <span class="string">'code_msg'</span> =&gt;$_status[$code],</span><br><span class="line">                    <span class="string">'error_msg'</span> =&gt;$error,</span><br><span class="line">                ];</span><br><span class="line">                <span class="keyword">echo</span> json_encode($statusData, JSON_UNESCAPED_UNICODE);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">###返回格式###</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="string">"code"</span>: <span class="number">422</span>,</span><br><span class="line"><span class="string">"code_msg"</span>: <span class="string">"Unprocessable Entity"</span>,</span><br><span class="line"><span class="string">"error_msg"</span>: <span class="string">"用户名已存在"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">### 调用方法 ###</span></span><br><span class="line">在需要的地方直接抛出异常，当然首先需要引入 MyHttpException 类</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> MyHttpException(<span class="number">500</span>, <span class="string">'插入失败'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>2.自定义异常类<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHttpException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $statusCode;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * HttpException constructor.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> int $statusCode</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $message</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> int $code</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($statusCode, $message = <span class="string">''</span>, $code = <span class="number">0</span>, $exception = null)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">parent</span>::__construct($message, $code, $exception);</span><br><span class="line">        <span class="keyword">$this</span>-&gt;statusCode = $statusCode;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;getStatusCode();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getStatusCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">static</span>::sendHttpStatus(<span class="keyword">$this</span>-&gt;statusCode,<span class="keyword">$this</span>-&gt;message);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 发送HTTP响应状态码</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $code</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $error</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> array|null $data</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@internal</span> param null $message</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">sendHttpStatus</span><span class="params">($code, $error = <span class="string">''</span>, $data = null)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> $_status = <span class="keyword">array</span>(</span><br><span class="line">            <span class="comment">// Informational 1xx</span></span><br><span class="line">            <span class="number">100</span> =&gt; <span class="string">'Continue'</span>,</span><br><span class="line">            <span class="number">101</span> =&gt; <span class="string">'Switching Protocols'</span>,</span><br><span class="line">            <span class="comment">// Success 2xx</span></span><br><span class="line">            <span class="number">200</span> =&gt; <span class="string">'OK'</span>,</span><br><span class="line">            <span class="number">201</span> =&gt; <span class="string">'Created'</span>,</span><br><span class="line">            <span class="number">202</span> =&gt; <span class="string">'Accepted'</span>,</span><br><span class="line">            <span class="number">203</span> =&gt; <span class="string">'Non-Authoritative Information'</span>,</span><br><span class="line">            <span class="number">204</span> =&gt; <span class="string">'No Content'</span>,</span><br><span class="line">            <span class="number">205</span> =&gt; <span class="string">'Reset Content'</span>,</span><br><span class="line">            <span class="number">206</span> =&gt; <span class="string">'Partial Content'</span>,</span><br><span class="line">            <span class="comment">// Redirection 3xx</span></span><br><span class="line">            <span class="number">300</span> =&gt; <span class="string">'Multiple Choices'</span>,</span><br><span class="line">            <span class="number">301</span> =&gt; <span class="string">'Moved Permanently'</span>,</span><br><span class="line">            <span class="number">302</span> =&gt; <span class="string">'Found'</span>,  <span class="comment">// 1.1</span></span><br><span class="line">            <span class="number">303</span> =&gt; <span class="string">'See Other'</span>,</span><br><span class="line">            <span class="number">304</span> =&gt; <span class="string">'Not Modified'</span>,</span><br><span class="line">            <span class="number">305</span> =&gt; <span class="string">'Use Proxy'</span>,</span><br><span class="line">            <span class="comment">// 306 is deprecated but reserved</span></span><br><span class="line">            <span class="number">307</span> =&gt; <span class="string">'Temporary Redirect'</span>,</span><br><span class="line">            <span class="comment">// Client Error 4xx</span></span><br><span class="line">            <span class="number">400</span> =&gt; <span class="string">'Bad Request'</span>,</span><br><span class="line">            <span class="number">401</span> =&gt; <span class="string">'Unauthorized'</span>,</span><br><span class="line">            <span class="number">402</span> =&gt; <span class="string">'Payment Required'</span>,</span><br><span class="line">            <span class="number">403</span> =&gt; <span class="string">'Forbidden'</span>,</span><br><span class="line">            <span class="number">404</span> =&gt; <span class="string">'Not Found'</span>,</span><br><span class="line">            <span class="number">405</span> =&gt; <span class="string">'Method Not Allowed'</span>,</span><br><span class="line">            <span class="number">406</span> =&gt; <span class="string">'Not Acceptable'</span>,</span><br><span class="line">            <span class="number">407</span> =&gt; <span class="string">'Proxy Authentication Required'</span>,</span><br><span class="line">            <span class="number">408</span> =&gt; <span class="string">'Request Timeout'</span>,</span><br><span class="line">            <span class="number">409</span> =&gt; <span class="string">'Conflict'</span>,</span><br><span class="line">            <span class="number">410</span> =&gt; <span class="string">'Gone'</span>,</span><br><span class="line">            <span class="number">411</span> =&gt; <span class="string">'Length Required'</span>,</span><br><span class="line">            <span class="number">412</span> =&gt; <span class="string">'Precondition Failed'</span>,</span><br><span class="line">            <span class="number">413</span> =&gt; <span class="string">'Request Entity Too Large'</span>,</span><br><span class="line">            <span class="number">414</span> =&gt; <span class="string">'Request-URI Too Long'</span>,</span><br><span class="line">            <span class="number">415</span> =&gt; <span class="string">'Unsupported Media Type'</span>,</span><br><span class="line">            <span class="number">416</span> =&gt; <span class="string">'Requested Range Not Satisfiable'</span>,</span><br><span class="line">            <span class="number">417</span> =&gt; <span class="string">'Expectation Failed'</span>,</span><br><span class="line">            <span class="number">422</span> =&gt; <span class="string">'Unprocessable Entity'</span>,</span><br><span class="line">            <span class="comment">// Server Error 5xx</span></span><br><span class="line">            <span class="number">500</span> =&gt; <span class="string">'Internal Server Error'</span>,</span><br><span class="line">            <span class="number">501</span> =&gt; <span class="string">'Not Implemented'</span>,</span><br><span class="line">            <span class="number">502</span> =&gt; <span class="string">'Bad Gateway'</span>,</span><br><span class="line">            <span class="number">503</span> =&gt; <span class="string">'Service Unavailable'</span>,</span><br><span class="line">            <span class="number">504</span> =&gt; <span class="string">'Gateway Timeout'</span>,</span><br><span class="line">            <span class="number">505</span> =&gt; <span class="string">'HTTP Version Not Supported'</span>,</span><br><span class="line">            <span class="number">509</span> =&gt; <span class="string">'Bandwidth Limit Exceeded'</span></span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>($_status[$code]))</span><br><span class="line">        &#123;</span><br><span class="line">            header(<span class="string">'HTTP/1.1 '</span> . $code . <span class="string">' '</span> . $_status[$code]);</span><br><span class="line">            header(<span class="string">'Content-Type:application/json;charset=utf-8'</span>);</span><br><span class="line">            <span class="keyword">if</span> ($code == <span class="number">200</span>) <span class="comment">//2xx状态码</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">echo</span> json_encode($data, JSON_UNESCAPED_UNICODE);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> ($code == <span class="number">204</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//无响应体</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">empty</span>($error))</span><br><span class="line">                &#123;</span><br><span class="line">                    $error = $_status[$code];</span><br><span class="line">                &#125;</span><br><span class="line">                $statusData = [</span><br><span class="line">                    <span class="string">'code'</span> =&gt;$code,</span><br><span class="line">                    <span class="string">'code_msg'</span> =&gt;$_status[$code],</span><br><span class="line">                    <span class="string">'error_msg'</span> =&gt;$error,</span><br><span class="line">                ];</span><br><span class="line">                <span class="keyword">echo</span> json_encode($statusData, JSON_UNESCAPED_UNICODE);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">exit</span>(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">###返回格式###</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="string">"code"</span>: <span class="number">422</span>,</span><br><span class="line"><span class="string">"code_msg"</span>: <span class="string">"Unprocessable Entity"</span>,</span><br><span class="line"><span class="string">"error_msg"</span>: <span class="string">"用户名已存在"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">### 调用方法 ###</span></span><br><span class="line">在需要的地方直接抛出异常，当然首先需要引入 MyHttpException 类</span><br><span class="line"></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> MyHttpException(<span class="number">500</span>, <span class="string">'插入失败'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">### 验证器使用 </span></span><br><span class="line"><span class="number">1</span>、验证器</span><br></pre></td></tr></table></figure></p>
+<p>namespace app\common\validate;<br>use think\Validate;<br>class Demo extends Validate<br>{<br>    //规则 –多个用 | 分开例如：number|between:1,2 等<br>    protected $rule = [<br>        ‘name’  =&gt;  ‘require’,<br>        ‘tel’  =&gt;  ‘require’,<br>    ];<br>    //提示信息<br>    protected $message  =   [<br>        ‘name.require’ =&gt; ‘请输入姓名’,<br>        ‘tel.require’ =&gt; ‘请输入联系电话’,<br>    ];<br>}<br>使用<br>$validate = validate(‘Demo’);<br>if(!$validate-&gt;check($data)){<br>    $error_info = $validate-&gt;getError();//错误提示信息–message<br>    return $this-&gt;ajaxReturn($error_info,0);<br>}<br>更多验证规则查看类：think\Validate<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2、验证场景</span><br></pre></td></tr></table></figure></p>
+<p> protected $scene = [<br>     ‘edit’  =&gt;  [‘name’,’tel’],<br> ];<br> $validate = validate(‘Demo’);<br> if(!$validate-&gt;scene(‘edit’)-&gt;check($data)){<br>     $error_info = $validate-&gt;getError();//错误提示信息–message<br>     return $this-&gt;ajaxReturn($error_info,0);<br> }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3.表单验证 </span><br><span class="line">表单中：&#123;:token(&apos;__demo__&apos;)&#125;</span><br></pre></td></tr></table></figure></p>
+<p>验证器中<br> //规则 –多个用 | 分开例如：number|between:1,2 等<br>protected $rule = [<br>    ‘name’  =&gt;  ‘require|token:<strong>demo</strong>‘,<br>    ‘tel’  =&gt;  ‘require’,<br>];<br><code></code></p>
 
           
         
@@ -1210,627 +1885,7 @@
         
           
             <p>1.<a href="https://segmentfault.com/a/1190000016117111?utm_source=weekly&amp;utm_medium=email&amp;utm_campaign=email_weekly" target="_blank" rel="noopener">教程、学习和网址</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/15/js判断当前URL的协议-http-https/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jianxin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iaitao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/aitao/2018/11/15/js判断当前URL的协议-http-https/" itemprop="url">js判断当前URL的协议(http/https)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T14:52:49+08:00">
-                2018-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/aitao/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="判断当前URL的协议"><a href="#判断当前URL的协议" class="headerlink" title="判断当前URL的协议"></a>判断当前URL的协议</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var protocol_ = document.location.protocol</span><br><span class="line">console.log(protocol_);</span><br><span class="line">---&gt;返回当前的协议 http:或者 https:</span><br></pre></td></tr></table></figure>
-<h3 id="获得当前域名"><a href="#获得当前域名" class="headerlink" title="获得当前域名"></a>获得当前域名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var domain_  = document.domain;</span><br></pre></td></tr></table></figure>
-<h3 id="获取指定字符后面的所有值"><a href="#获取指定字符后面的所有值" class="headerlink" title="获取指定字符后面的所有值"></a>获取指定字符后面的所有值</h3><p>stringObject.substring(start,stop)</p>
-<blockquote>
-<p>start    必需。一个非负的整数，规定要提取的子串的第一个字符在 stringObject 中的位置。<br>stop    可选。一个非负的整数，比要提取的子串的最后一个字符在 stringObject 中的位置多 1。如果省略该参数，那么返回的子串会一直到字符串的结尾。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function getCaption(obj,catp)&#123;</span><br><span class="line">    var index=obj.lastIndexOf(catp);</span><br><span class="line">    obj=obj.substring(index+1,obj.length);</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line">测试：</span><br><span class="line">var url = &apos;http://www.demo.com?id=1%name=cs&apos;;</span><br><span class="line">getCaption(url,&apos;\?&apos;);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="h5-向指定元素添加事件句柄"><a href="#h5-向指定元素添加事件句柄" class="headerlink" title="h5 向指定元素添加事件句柄"></a>h5 向指定元素添加事件句柄</h3><blockquote>
-<p>element.addEventListener(event, function, useCapture)<br>更多的事件可以参考菜鸟<a href="http://www.runoob.com/jsref/dom-obj-event.html" target="_blank" rel="noopener">HTML DOM 事件</a><br>addEventListener() 是 W3C DOM 规范中提供的注册事件监听器的方法<br>1.它允许给一个事件注册多个监听器。 特别是在使用AJAX库，JavaScript模块，或其他需要第三方库/插件的代码。<br>2.它提供了一种更精细的手段控制 listener 的触发阶段。（即可以选择捕获或者冒泡）<br>2.它对任何 DOM 元素都是有效的，而不仅仅只对 HTML 元素有效。<br>更多的addEventListener()规范浏览MDN<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">EventTarget.addEventListener()</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html  --&gt;</span><br><span class="line">&lt;a href=<span class="string">"/demo/index.html"</span> id = <span class="string">"demo"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="keyword">var</span> demo_ = <span class="built_in">document</span>.getElementById(<span class="string">'demo'</span>);</span><br><span class="line">demo_.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> path_name = e.target.pathname;<span class="comment">//得到href 指定的地址</span></span><br><span class="line">	<span class="built_in">console</span>.log(e.path);<span class="comment">//可以查看到事件触发参数</span></span><br><span class="line">	e.preventDefault(); <span class="comment">// 避免导航到 "#"</span></span><br><span class="line">&#125;,<span class="literal">false</span>)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/14/常用JS集合/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jianxin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iaitao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/aitao/2018/11/14/常用JS集合/" itemprop="url">常用JS集合</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T15:38:25+08:00">
-                2018-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/aitao/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://www.2cto.com/kf/201411/348417.html" target="_blank" rel="noopener">文章转载地址</a></p>
-<h3 id="检测邮箱是否有效"><a href="#检测邮箱是否有效" class="headerlink" title="检测邮箱是否有效"></a>检测邮箱是否有效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; name=&quot;email&quot; id=&quot;email&quot;&gt;</span><br></pre></td></tr></table></figure>
-<p>—-javascript—-<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> email = <span class="built_in">document</span>.getElementById(<span class="string">'email'</span>);</span><br><span class="line">email.addEventListener(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> data = e.target.value;</span><br><span class="line">	<span class="keyword">if</span>(ValidateEmail(data)) &#123;</span><br><span class="line">		alert(<span class="string">'有效的邮箱'</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">		alert(<span class="string">'无效的邮箱'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	e.preventDefault(); <span class="comment">// 避免导航到 "#"</span></span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ValidateEmail</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = <span class="regexp">/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,4&#125;$/</span>;</span><br><span class="line">    <span class="keyword">if</span> (r.test(str)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="检测手机号是否规范"><a href="#检测手机号是否规范" class="headerlink" title="检测手机号是否规范"></a>检测手机号是否规范</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function ValidateTelPhone(str) &#123;</span><br><span class="line">	var regu = /^[1][3,4,5,7,8][0-9]&#123;9&#125;$/;</span><br><span class="line">	var re = new RegExp(regu);</span><br><span class="line">	if (re.test(str)) &#123;</span><br><span class="line">	    return true;</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">	    return false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="页面跳转表单清空"><a href="#页面跳转表单清空" class="headerlink" title="页面跳转表单清空"></a>页面跳转表单清空</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function aUrl(url) &#123;</span><br><span class="line">    window.location.href = url;</span><br><span class="line">&#125;//跳转</span><br><span class="line">function rForm(formid) &#123;</span><br><span class="line">    document.getElementById(formid).reset();</span><br><span class="line">&#125;//清空</span><br></pre></td></tr></table></figure>
-<h3 id="全选"><a href="#全选" class="headerlink" title="全选"></a>全选</h3><blockquote>
-<p>jquery实现<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSelected</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> ids = <span class="keyword">new</span> <span class="built_in">Array</span>(),</span><br><span class="line">		i=<span class="number">0</span>;</span><br><span class="line">	$(<span class="string">"input[name^='ids']:checked"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> val = $(<span class="keyword">this</span>).val();</span><br><span class="line">		ids[i] = val;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">if</span>(ids.length == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="comment">//选择所有的</span></span><br><span class="line">		i=<span class="number">0</span>;</span><br><span class="line">		$(<span class="string">"input[name^='ids']"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> val = $(<span class="keyword">this</span>).val();</span><br><span class="line">			ids[i] = val;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ids;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>原生js</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAll</span>(<span class="params">id, checkname</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    <span class="keyword">if</span> (obj.checked) &#123;</span><br><span class="line">        $(<span class="string">"input[name='"</span> + checkname + <span class="string">"']"</span>).attr(<span class="string">'checked'</span>, <span class="literal">true</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">"input[name='"</span> + checkname + <span class="string">"']"</span>).attr(<span class="string">'checked'</span>, <span class="literal">false</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h3><p>打开一个小窗口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var open_win = document.getElementById(&apos;open_win&apos;);</span><br><span class="line">	open_win.addEventListener(&apos;click&apos;,function(e)&#123;</span><br><span class="line">		openwindow(&apos;http://www.guou.njapld.com&apos;,200,200);</span><br><span class="line">	e.preventDefault(); // 避免导航到 &quot;#&quot;</span><br><span class="line">&#125;,false);</span><br><span class="line">function openwindow(url, height, width) &#123;</span><br><span class="line">    var t = (window.screen.availHeight - 400) / 2;</span><br><span class="line">    var l = (window.screen.availWidth - 600) / 2;</span><br><span class="line">    window.open(url, &quot;Query&quot;, &quot;height=&quot; + height + &quot;, width=&quot; + width + &quot;, top=&quot; + t + &quot;,left=&quot; + l + &quot;,toolbar=no, menubar=no, 	scrollbars=yes, resizable=no&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="数字金额–转汉字金额"><a href="#数字金额–转汉字金额" class="headerlink" title="数字金额–转汉字金额"></a>数字金额–转汉字金额</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">function atoc(numberValue) &#123;</span><br><span class="line">    var numberValue = new String(Math.round(numberValue * 100)); // 数字金额  </span><br><span class="line">    var chineseValue = &quot;&quot;; // 转换后的汉字金额  </span><br><span class="line">    var String1 = &quot;零壹贰叁肆伍陆柒捌玖&quot;; // 汉字数字  </span><br><span class="line">    var String2 = &quot;万仟佰拾亿仟佰拾万仟佰拾元角分&quot;; // 对应单位  </span><br><span class="line">    var len = numberValue.length; // numberValue 的字符串长度  </span><br><span class="line">    var Ch1; // 数字的汉语读法  </span><br><span class="line">    var Ch2; // 数字位的汉字读法  </span><br><span class="line">    var nZero = 0; // 用来计算连续的零值的个数  </span><br><span class="line">    var String3; // 指定位置的数值  </span><br><span class="line">    if (len &gt; 15) &#123;</span><br><span class="line">        alert(&quot;超出计算范围&quot;);</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (numberValue == 0) &#123;</span><br><span class="line">        chineseValue = &quot;零元整&quot;;</span><br><span class="line">        return chineseValue;</span><br><span class="line">    &#125;</span><br><span class="line">    String2 = String2.substr(String2.length - len, len); // 取出对应位数的STRING2的值  </span><br><span class="line">    for (var i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        String3 = parseInt(numberValue.substr(i, 1), 10); // 取出需转换的某一位的值  </span><br><span class="line">        if (i != (len - 3) &amp;&amp; i != (len - 7) &amp;&amp; i != (len - 11) &amp;&amp; i != (len - 15)) &#123;</span><br><span class="line">            if (String3 == 0) &#123;</span><br><span class="line">                Ch1 = &quot;&quot;;</span><br><span class="line">                Ch2 = &quot;&quot;;</span><br><span class="line">                nZero = nZero + 1;</span><br><span class="line">            &#125;</span><br><span class="line">            else if (String3 != 0 &amp;&amp; nZero != 0) &#123;</span><br><span class="line">                Ch1 = &quot;零&quot; + String1.substr(String3, 1);</span><br><span class="line">                Ch2 = String2.substr(i, 1);</span><br><span class="line">                nZero = 0;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                Ch1 = String1.substr(String3, 1);</span><br><span class="line">                Ch2 = String2.substr(i, 1);</span><br><span class="line">                nZero = 0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123; // 该位是万亿，亿，万，元位等关键位  </span><br><span class="line">            if (String3 != 0 &amp;&amp; nZero != 0) &#123;</span><br><span class="line">                Ch1 = &quot;零&quot; + String1.substr(String3, 1);</span><br><span class="line">                Ch2 = String2.substr(i, 1);</span><br><span class="line">                nZero = 0;</span><br><span class="line">            &#125;</span><br><span class="line">            else if (String3 != 0 &amp;&amp; nZero == 0) &#123;</span><br><span class="line">                Ch1 = String1.substr(String3, 1);</span><br><span class="line">                Ch2 = String2.substr(i, 1);</span><br><span class="line">                nZero = 0;</span><br><span class="line">            &#125;</span><br><span class="line">            else if (String3 == 0 &amp;&amp; nZero &gt;= 3) &#123;</span><br><span class="line">                Ch1 = &quot;&quot;;</span><br><span class="line">                Ch2 = &quot;&quot;;</span><br><span class="line">                nZero = nZero + 1;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                Ch1 = &quot;&quot;;</span><br><span class="line">                Ch2 = String2.substr(i, 1);</span><br><span class="line">                nZero = nZero + 1;</span><br><span class="line">            &#125;</span><br><span class="line">            if (i == (len - 11) || i == (len - 3)) &#123; // 如果该位是亿位或元位，则必须写上  </span><br><span class="line">                Ch2 = String2.substr(i, 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        chineseValue = chineseValue + Ch1 + Ch2;</span><br><span class="line">    &#125;</span><br><span class="line">    if (String3 == 0) &#123; // 最后一位（分）为0时，加上“整”  </span><br><span class="line">        chineseValue = chineseValue + &quot;整&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return chineseValue;</span><br><span class="line">&#125;</span><br><span class="line">console.log(atoc(110));</span><br><span class="line">|：壹佰壹拾元整</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/14/JQuery插件-backstretch/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jianxin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iaitao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/aitao/2018/11/14/JQuery插件-backstretch/" itemprop="url">JQuery插件--backstretch</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T15:21:12+08:00">
-                2018-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/aitao/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Backstretch是一个jQuery插件，允许您将动态调整大小的背景图像添加到任何页面。图像将拉伸以适合页面，并随着窗口大小的变化自动调整大小。</p>
-<blockquote>
-<p><a href="https://github.com/jquery-backstretch/jquery-backstretch" target="_blank" rel="noopener">下载地址：</a></p>
-</blockquote>
-<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在网页中包含jQuery库和Backstretch插件文件（最好在页面底部，在结束BODY标记之前）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/jquery/3.3.1/jquery.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>在页面上定义一个区域如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(function()&#123;</span><br><span class="line">	$(&quot;.container&quot;).css(&#123; opacity:0.6 &#125;);//设置透明度</span><br><span class="line">    $.backstretch([</span><br><span class="line">     &quot;a.jpg&quot;,</span><br><span class="line">     &quot;b.jpg&quot;,</span><br><span class="line">    ], &#123; duration: 3000, fade: 750 &#125;);</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">图片切换的间隔时间duration</span><br></pre></td></tr></table></figure>
-<h5 id="当给body设置的时候不用指定区域"><a href="#当给body设置的时候不用指定区域" class="headerlink" title="当给body设置的时候不用指定区域"></a>当给body设置的时候不用指定区域</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$.backstretch([</span><br><span class="line">     &quot;a.jpg&quot;,</span><br><span class="line">     &quot;b.jpg&quot;,</span><br><span class="line">    ], &#123; duration: 3000, fade: 750 &#125;);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-
-    
-
-    
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://upholdjx.github.io/aitao/aitao/2018/11/14/HTML5-File-Api/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jianxin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://uploads.5068.com/allimg/1802/82-1P209122008-50.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iaitao">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/aitao/2018/11/14/HTML5-File-Api/" itemprop="url">HTML5_File_Api</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-14T10:00:21+08:00">
-                2018-11-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/aitao/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>该规范提供了一种API，用于表示Web应用程序中的文件对象，以及以编程方式选择它们并访问它们的数据。这包括：<br>一个FileList接口，表示来自底层系统的单独选择的文件的数组。当输入元素File Upload处于[HTML]状态时调用用于选择的用户界面。<br>一个Blob接口，表示不可变的原始二进制数据，并允许Blob作为单独的对象访问对象内的字节范围Blob。<br>一个File接口，包括有关文件的只读信息属性，例如其名称和文件的最后修改日期（在磁盘上）。<br>甲FileReader接口，它提供的方法来读取一个File或一个Blob，和一个事件模型获得的结果的这些读取。<br>用于二进制数据（如文件）的URL方案，以便可以在Web应用程序中引用它们。<br>此外，该规范定义了在线程Web应用程序中用于同步读取文件的对象。<a href="https://w3c.github.io/FileAPI/" target="_blank" rel="noopener">更多请看FileAPI</a><br>本文参考博客：<a href="https://www.cnblogs.com/zichi/p/html5-file-api.html" target="_blank" rel="noopener">HTML5 File API — 让前端操作文件变的可能–韩子迟（网名）</a></p>
-<h3 id="FileList接口"><a href="#FileList接口" class="headerlink" title="FileList接口"></a>FileList接口</h3><p>所有type属性(attribute)为file的 input 元素都有一个files属性(property),用来存储用户所选择的文件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> &gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.files[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果你想让用户选择多个文件，只需在input元素上使用multiple属性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"input"</span> <span class="attr">multiple</span> <span class="attr">onchange</span>=<span class="string">"handleFiles(this.files)"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h3><p>FileReader 对象采用异步方式读取文件，可以为一系列事件指定回调函数。<br>.onabort 方法：读取中断或调用 reader.abort() 方法时触发。<br>.onerror 方法：读取出错时触发。<br>.onload 方法：读取成功后触发。<br>.onloadend 方法：读取完成后触发，不管是否成功。触发顺序排在 onload 或 onerror 后面。<br>.onloadstart 方法：读取将要开始时触发。<br>.onprogress 方法：读取过程中周期性触发。（可以用来获取文件读取的进度）</p>
-<p>获取图片的base64编码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'file'</span> <span class="attr">multiple</span> <span class="attr">id</span>=<span class="string">"fileItem"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dataURL = reader.result;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(<span class="keyword">this</span>.files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> ipt = <span class="built_in">document</span>.querySelector(<span class="string">'textarea'</span>);</span><br><span class="line">ipt.ondragover = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;;</span><br><span class="line"><span class="comment">// Add drop handler</span></span><br><span class="line">ipt.ondrop = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.stopPropagation();</span><br><span class="line">  e.preventDefault();</span><br><span class="line">  e = e || <span class="built_in">window</span>.event;</span><br><span class="line">  <span class="keyword">var</span> files = e.dataTransfer.files;</span><br><span class="line">  <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">  reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> dataURL = reader.result;</span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'textarea'</span>).innerHTML = dataURL;</span><br><span class="line">  &#125;;</span><br><span class="line"> reader.readAsDataURL(files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>上传图片预览功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'input'</span>).onchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> files = <span class="keyword">this</span>.files;</span><br><span class="line">	<span class="built_in">document</span>.querySelector(<span class="string">"img"</span>).src = <span class="built_in">window</span>.URL.createObjectURL(files[<span class="number">0</span>]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="触发隐藏的inpt"><a href="#触发隐藏的inpt" class="headerlink" title="触发隐藏的inpt"></a>触发隐藏的inpt</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"fileElem"</span> <span class="attr">multiple</span> <span class="attr">accept</span>=<span class="string">"image/*"</span> <span class="attr">style</span>=<span class="string">"display:none"</span> <span class="attr">onchange</span>=<span class="string">"handleFiles(this.files)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">id</span>=<span class="string">"fileSelect"</span>&gt;</span>Select some files<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fileSelect = <span class="built_in">document</span>.getElementById(<span class="string">"fileSelect"</span>),</span><br><span class="line">  fileElem = <span class="built_in">document</span>.getElementById(<span class="string">"fileElem"</span>);</span><br><span class="line"></span><br><span class="line">fileSelect.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (fileElem) &#123;</span><br><span class="line">    fileElem.click();</span><br><span class="line">  &#125;</span><br><span class="line">  e.preventDefault(); <span class="comment">// 避免导航到 "#"</span></span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">handleFiles</span>(<span class="params">argument</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(argument);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="js-页面打印"><a href="#js-页面打印" class="headerlink" title="js 页面打印"></a>js 页面打印</h3><blockquote>
-<p>所需要打印的代码，用<!--startprint1-->和<!--endprint1--></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function preview(oper)</span><br><span class="line">&#123;</span><br><span class="line">     if (oper &lt; 10)&#123;</span><br><span class="line">     bdhtml=window.document.body.innerHTML;//获取当前页的html代码</span><br><span class="line">     sprnstr=&quot;&lt;!--startprint&quot;+oper+&quot;--&gt;&quot;;//设置打印开始区域</span><br><span class="line">     eprnstr=&quot;&lt;!--endprint&quot;+oper+&quot;--&gt;&quot;;//设置打印结束区域</span><br><span class="line">     prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html</span><br><span class="line">     prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html</span><br><span class="line">     window.document.body.innerHTML=prnhtml;</span><br><span class="line">     window.print();</span><br><span class="line">     window.document.body.innerHTML=bdhtml;</span><br><span class="line">     &#125; else &#123;</span><br><span class="line">     window.print();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;input type=button class=&quot;btn btn-sky shiny btn-sm&quot; title=&apos;打印1&apos; onclick=preview(1) value=打印1&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h3><p>1.<a href="https://material-ui.com/" target="_blank" rel="noopener">material-ui</a></p>
 
           
         
@@ -1927,7 +1982,7 @@
               
                 <a href="/aitao/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1938,7 +1993,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/aitao/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1949,7 +2004,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/aitao/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
